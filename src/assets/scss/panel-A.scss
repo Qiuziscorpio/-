@@ -1,0 +1,20 @@
+html,
+body,
+div,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+//初始配置
+html {
+    font-size: 16px;
+    font-family: "微软雅黑";
+    min-width: 329px;
+}
+
+//px转换rem
+@function px2rem($px) {
+    $rem: 37.5px;
+    @return ($px/$rem) +rem;
+}

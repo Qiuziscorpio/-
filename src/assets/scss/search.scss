@@ -1,0 +1,15 @@
+@import "confi.scss";
+
+.search{
+    width: 100%;
+    border-radius:px2rem(10px); 
+    .magnify{
+        font-size:px2rem(30px);
+    }
+    .input{
+         font-size:px2rem(30px);
+    }
+    .scan{
+         font-size:px2rem(30px);
+    }
+}
