@@ -11,10 +11,26 @@ html {
   font-family: "微软雅黑";
   min-width: 320px; }
 
+.flex-row {
+  display: -webkit-flex;
+  display: flex; }
+
+.flex-grid {
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1; }
+
+.bg-yellow {
+  background: #ffb71b; }
+
+.bg-blue {
+  background: #0ac7fd; }
+
 .mint-swipe {
   overflow: hidden;
   position: relative;
-  height: 11.1875rem; }
+  height: 11.1875rem;
+  background: #000; }
 
 .mint-swipe-item img {
   width: 100%;

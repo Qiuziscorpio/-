@@ -12,7 +12,30 @@ html {
     font-family: "微软雅黑";
     min-width: 320px;
 }
+$yellow:#ffb71b;
+$blu:#0ac7fd;
 
+
+
+
+//网格布局
+.flex-row{
+    display: -webkit-flex;
+    display: flex;
+}
+.flex-grid{
+    flex:1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+}
+
+//颜色
+.bg-yellow{
+    background:$yellow;
+}
+.bg-blue{
+    background:$blu;
+}
 
 //px转换rem
 @function px2rem($px) {

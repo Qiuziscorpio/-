@@ -11,14 +11,46 @@ html {
   font-family: "微软雅黑";
   min-width: 320px; }
 
+.flex-row {
+  display: -webkit-flex;
+  display: flex; }
+
+.flex-grid {
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1; }
+
+.bg-yellow {
+  background: #ffb71b; }
+
+.bg-blue {
+  background: #0ac7fd; }
+
 .search {
-  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.15625rem;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-radius: 0.3125rem; }
   .search .magnify {
-    font-size: 0.9375rem; }
+    position: absolute;
+    left: 0.3125rem;
+    top: 0.3125rem; }
+    .search .magnify i {
+      font-size: 1.25rem;
+      color: #fff; }
   .search .input {
-    font-size: 0.9375rem; }
+    font-size: 0.9375rem;
+    color: #fff;
+    flex: 1;
+    padding-left: 1.25rem; }
   .search .scan {
-    font-size: 0.9375rem; }
+    flex: 0 0 7%; }
+    .search .scan i {
+      font-size: 1.25rem;
+      color: #fff; }
 
 /*# sourceMappingURL=search.css.map */

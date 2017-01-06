@@ -1,10 +1,12 @@
 <template>
   <div >
     <!--搜索-->
-    <div class="search">
-      <span class="magnify"><i class="icon iconfont icon-sousuo"></i></span> 
-      <input class="input" placeholder=""> 
-      <span class="scan"><i class="icon iconfont icon-saoyisao"></i></span> 
+    <div class="index-search">
+      <div class="search">
+        <span class="magnify"><i class="icon iconfont icon-sousuo"></i></span> 
+        <input class="input" placeholder="搜索商品/新品/促销/商家"> 
+        <span class="scan"><i class="icon iconfont icon-saoyisao"></i></span> 
+      </div>      
     </div>
     <!--轮播图-->
     <shuffling></shuffling>
@@ -47,12 +49,28 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss"  scoped>
   @import "../assets/scss/search.scss"; 
-  .search{
-    position: fixed;
-    top:0;
-    z-index: 9;
-    background: rgba(0, 0, 0, 0.4);
-    margin: px2rem(30px)
+  placeholder{
+    color: #fff;
   }
+  :-ms-input-placeholder {
+    color: #fff;
+  }
+  ::-webkit-input-placeholder {
+     color: #fff;
+  }
+  .index-search{
+    width: 100%;
+    position: absolute;
+    z-index: 9;
+    .search{
+      margin: px2rem(30px);
+      background: rgba(0, 0, 0, 0.4);
+    }
+    .input{
+      border: none;
+      background: rgba(0, 0, 0, 0)
+    }
+  }
+
 
 </style>
