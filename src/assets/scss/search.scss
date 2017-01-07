@@ -12,23 +12,20 @@
     .magnify{
         position: absolute;
         left:px2rem(10px);
-        top:px2rem(10px);
+        top:px2rem(6px);
         i{  
-            font-size:px2rem(40px);
-            color: #fff;
+            @include fc(40px,#fff)
          }    
     }
     .input{
-         font-size:px2rem(30px);
-         color: #fff;
+         @include fc(30px,#fff);
          flex: 1;
          padding-left:px2rem(40px) 
     }
     .scan{
          flex:0 0 7%;
          i{
-            font-size:px2rem(40px);
-            color: #fff;
+             @include fc(40px,#fff)        
          }
     }
 }

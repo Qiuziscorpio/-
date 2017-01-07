@@ -2,33 +2,33 @@
   <div>
     <div class="flex-row">
       <div class="flex-grid">
-        <div class="nav-radius">
-          <div class="nav-icon">
+        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+          <div class="nav-icon bg-yellow">
             <i class="icon iconfont icon-xuanshangpin"></i>
           </div> 
           商品
-        </div>
+        </router-link>
       </div>
       <div class="flex-grid">
-        <div class="nav-radius">
-          <div class="nav-icon">
-            <i class="icon iconfont icon-xuanshangpin"></i>
+        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+          <div class="nav-icon bg-blue">
+           <i class="icon iconfont icon-icon111"></i>
           </div> 
           新品
-        </div>
+        </router-link>
       </div>
       <div class="flex-grid">
-        <div class="nav-radius">
-          <div class="nav-icon">
-            <i class="icon iconfont icon-xuanshangpin"></i>
+        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+          <div class="nav-icon bg-rose">
+            <i class="icon iconfont icon-lipinicon"></i>
           </div> 
           促销
-        </div>
+        </router-link>
       </div>
       <div class="flex-grid">
           <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
-            <div class="nav-icon">
-              <i class="icon iconfont icon-xuanshangpin"></i>
+            <div class="nav-icon bg-green">
+              <i class="icon iconfont icon-shangjia"></i>
             </div> 
             商家
           </router-link>
@@ -53,10 +53,10 @@
   @import "../../assets/scss/nav.scss"; 
 
   .flex-row{
-    margin-top:px2rem(30px);
+    margin:px2rem(20px);
   }
   .nav-radius{
-    margin: px2rem(30px)
+    margin: px2rem(20px) 0;
   }
 
 </style>

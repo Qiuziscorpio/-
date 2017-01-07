@@ -17,7 +17,7 @@ const router = new Router({
 })
 
 // 数据接口
-Vue.prototype.api="http://rap.taobao.org/mockjsdata/11407"
+Vue.prototype.api="http://rap.taobao.org/mockjsdata/11407/Mall"
 
 /* eslint-disable no-new */
 new Vue({ // eslint-disable-line

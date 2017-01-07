@@ -1,30 +1,21 @@
 <template>
-  <div>
-    <mt-swipe :auto="4000">
-      <mt-swipe-item> 
-        <img v-bind:src="img"/>
-      </mt-swipe-item>
-      <mt-swipe-item>
-         <img v-bind:src="img"/>
-      </mt-swipe-item>
-      <mt-swipe-item>
-         <img v-bind:src="img"/>
-      </mt-swipe-item>
-    </mt-swipe>
-  </div>
+<div>
+  <mt-swipe :auto="4000">
+    <mt-swipe-item v-for="data in shufflingdata">
+      <img v-bind:src="data.CoverImg" />
+    </mt-swipe-item>
+  </mt-swipe>
+</div>
 </template>
 
 <script>
 import "../../assets/scss/shuffing.css"; 
-import img from '../../assets/img/index/1.jpg'
 export default {
   name: 'shuffling',
   components:{
   },
-  data () {
-    return {
-      img:img
-    }
+  props:{
+    shufflingdata:""
   }
 }
 </script>

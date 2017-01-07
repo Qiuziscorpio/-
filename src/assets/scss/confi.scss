@@ -1,46 +1,90 @@
-html,
-body,
-div,
-img {
+//初始配置
+html,body,div,img,p,ul,li {
     margin: 0;
     padding: 0;
 }
-
-//初始配置
 html {
     font-size: 16px;
     font-family: "微软雅黑";
     min-width: 320px;
 }
+$theme:#565656;
 $yellow:#ffb71b;
-$blu:#0ac7fd;
+$blue:#0ac7fd;
+$green:#74ce3b;
+$rose:#e4195b;
 
 
 
+// 混合
+@mixin  fc($size,$color) {
+    font-size:px2rem($size);
+    color:$color;
+}
+@mixin whradius($radius:50%,$width:15vw,$height:15vw){
+    border-radius: $radius;
+    width:$width;
+    height:$height;
+    text-align: center;
+}
+@mixin position($position,$right,$bottom,$index){
+    position:$position;
+    right:$right;
+    bottom:$bottom;;
+    z-index: $index;
+}
+//px转换rem
+@function px2rem($px) {
+    $rem: 32px;
+    @return ($px/$rem) +rem;
+}
 
 //网格布局
 .flex-row{
     display: -webkit-flex;
     display: flex;
+    &.xs{
+        margin:0  px2rem(11px);
+    }
 }
 .flex-grid{
     flex:1;
     -webkit-flex: 1;
     -ms-flex: 1;
+    &.flex-grid3{
+        flex:0 0 33.333%;
+        -webkit-flex:0 0 33.333%;
+        -ms-flex: 0 0 33.333%;      
+    }
 }
+
 
 //颜色
 .bg-yellow{
     background:$yellow;
 }
 .bg-blue{
-    background:$blu;
+    background:$blue;
+}
+.bg-green{
+     background:$green;
+}
+.bg-rose{
+    background: $rose;
 }
 
-//px转换rem
-@function px2rem($px) {
-    $rem: 32px;
-    @return ($px/$rem) +rem;
+.text-yellow{
+    color:$yellow;
 }
+.text-blue{
+    color:$blue;
+}
+.text-green{
+    color:$green;
+}
+.text-rose{
+    color: $rose;
+}
+
 
 

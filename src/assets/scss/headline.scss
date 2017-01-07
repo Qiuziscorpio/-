@@ -1,0 +1,28 @@
+@import "confi.scss";
+
+
+.headline{
+    position: relative;
+    display: flex;
+    justify-content:space-between;
+    padding: px2rem(22px);
+    .tit{
+          @include fc(30px,$theme)
+        i{
+          font-size:px2rem(35px)
+        }
+    }
+    .more{
+        @include fc(24px,#8c8c8c)
+    }
+    &:after{
+        width: 100%;
+        content:"";
+        position: absolute;
+        top: 0;
+        left:0;
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;                    
+        border-top:px2rem(1px) solid #efefef;
+    }
+}

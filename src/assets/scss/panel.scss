@@ -1,0 +1,37 @@
+@import "confi.scss";
+
+.panel{  
+    margin:0  px2rem(11px);
+    .panel-img{      
+        width: 100%;
+        position: relative;
+        .panel-radius{
+            @include  position(absolute,0,0,9);
+            top:0;
+            .panel-radius-icon{
+                line-height:px2rem(48px);
+                @include whradius(50%,px2rem(45px),px2rem(45px));
+                i{
+                    @include fc(46px,#fff)
+                }
+            }
+        }
+        img {
+            width: 100%;
+            max-width: 100%;
+        }
+    }
+    .panel-content{
+        .tit{
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;            
+            @include fc(24px,$theme)
+        }
+        .num{
+            font-size: px2rem(24px)
+        }
+        padding-bottom: px2rem(46px)
+    }
+}

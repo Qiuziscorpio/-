@@ -1,6 +1,7 @@
 <template>
   <div>
     <div>
+      这里是搜索页面啦
     <div>
   </div>
 </template>

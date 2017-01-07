@@ -1,8 +1,5 @@
 @charset "UTF-8";
-html,
-body,
-div,
-img {
+html, body, div, img, p, ul, li {
   margin: 0;
   padding: 0; }
 
@@ -14,11 +11,17 @@ html {
 .flex-row {
   display: -webkit-flex;
   display: flex; }
+  .flex-row.xs {
+    margin: 0 0.34375rem; }
 
 .flex-grid {
   flex: 1;
   -webkit-flex: 1;
   -ms-flex: 1; }
+  .flex-grid.flex-grid3 {
+    flex: 0 0 33.333%;
+    -webkit-flex: 0 0 33.333%;
+    -ms-flex: 0 0 33.333%; }
 
 .bg-yellow {
   background: #ffb71b; }
@@ -26,21 +29,39 @@ html {
 .bg-blue {
   background: #0ac7fd; }
 
+.bg-green {
+  background: #74ce3b; }
+
+.bg-rose {
+  background: #e4195b; }
+
+.text-yellow {
+  color: #ffb71b; }
+
+.text-blue {
+  color: #0ac7fd; }
+
+.text-green {
+  color: #74ce3b; }
+
+.text-rose {
+  color: #e4195b; }
+
 .nav-radius {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #565656; }
+  color: #565656;
+  font-size: 0.875rem; }
   .nav-radius .nav-icon {
-    text-align: center;
     border-radius: 50%;
-    width: 3.75rem;
-    height: 3.75rem;
-    line-height: 4.21875rem;
-    font-size: 0.75rem;
-    margin-bottom: 0.8125rem; }
+    width: 16vw;
+    height: 16vw;
+    text-align: center;
+    line-height: 18vw;
+    margin-bottom: 0.625rem; }
     .nav-radius .nav-icon i {
-      font-size: 1.5625rem;
+      font-size: 1.875rem;
       color: #fff; }
 
 /*# sourceMappingURL=nav.css.map */

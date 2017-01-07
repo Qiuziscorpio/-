@@ -4,18 +4,14 @@
     display: flex;
     flex-direction: column ;
     align-items: center;
-    color: #565656;
+    color:$theme;
+    font-size: px2rem(28px);
     .nav-icon{
-        text-align: center;
-        border-radius: 50%;
-        width: px2rem(120px);
-        height: px2rem(120px);
-        line-height: px2rem(135px);
-        font-size: px2rem(24px);
-        margin-bottom: px2rem(26px);
+        @include whradius(50%,16vw,16vw);
+        line-height:18vw;
+        margin-bottom: px2rem(20px);
         i{
-            font-size: px2rem(50px);
-            color: #fff;
+            @include fc(60px,#fff)
         }
     }
 }
