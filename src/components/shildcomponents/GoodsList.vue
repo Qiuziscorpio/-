@@ -49,11 +49,12 @@ export default {
           let _sel=this   
           _sel.key=val
           return _sel.showlist.filter(function (item) {
-                if (item.Title.indexOf(_sel.key)>-1){
-                    console.log(item)
-                    console.log(_sel.itemlist.unshift(item))
-                    //return _sel.showlist=_sel.itemlist.push(item)          
-                }   
+                if(item.labelico==="ren"){
+                   if (item.Name.indexOf(_sel.key)>-1){
+                       _sel.itemlist.push(item)
+                       return _sel.showlist=_sel.itemlist        
+                   } 
+                }
           })          
     }    			
   },  

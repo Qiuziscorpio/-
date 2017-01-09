@@ -3,8 +3,8 @@
     <!--搜索-->
       <div class="search">
         <span class="magnify"><i class="icon iconfont icon-sousuo"></i></span> 
-        <input class="input" :placeholder="placeholder" v-model="searchdata"> 
-        <span class="scan" v-if="scan"><i class="icon iconfont icon-saoyisao"></i></span> 
+        <input class="input" :placeholder="placeholder" v-model="searchdata" v-on:keyup="keyup"> 
+        <span class="scan" v-if="placeholder!='搜索供应商'"><i class="icon iconfont icon-saoyisao"></i></span> 
       </div>       
   </div>
 </template>
@@ -21,11 +21,11 @@
         scan:true
       }
     },
-    watch:{
-      searchdata:function(){
-        this.$root.$emit('key',this.searchdata)
+    methods: {   
+      keyup:function(){
+         this.$root.$emit('key',this.searchdata)
       }
-    },
+    },    
     mounted() {
     }    
   }
@@ -77,6 +77,7 @@
       padding: px2rem(15px);
       padding-left: px2rem(55px);
       -webkit-appearance: none;
+      font-size: px2rem(25px)
     }
     .scan{
       flex: 0 0 10%;
