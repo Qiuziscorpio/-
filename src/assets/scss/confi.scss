@@ -45,6 +45,7 @@ $rose:#e4195b;
     display: flex;
     &.xs{
         margin:0  px2rem(11px);
+        flex-wrap: wrap;
     }
 }
 .flex-grid{

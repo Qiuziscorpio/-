@@ -17,7 +17,11 @@ const router = new Router({
 })
 
 // 数据接口
-Vue.prototype.api="http://rap.taobao.org/mockjsdata/11407/Mall"
+Vue.prototype.api="http://rap.taobao.org/mockjsdata/11407"
+
+//用户的登录令牌
+var Token="123456abc"
+localStorage.setItem("token",Token)
 
 /* eslint-disable no-new */
 new Vue({ // eslint-disable-line

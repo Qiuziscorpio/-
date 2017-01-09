@@ -54,25 +54,25 @@ export default {
       producttit:[{
         icontype:"icon-xuanshangpin text-yellow",
         tittype:"商品",
-        moreurlname:"search",
+        moreurlname:"list/Product/1",
         moretit:"更多"
       }],      
       newproductstit:[{
         icontype:"icon-icon111 text-blue",
         tittype:"新品",
-        moreurlname:"search",
+        moreurlname:"list/Product/2",
         moretit:"更多"
       }],       
       promoproductstit:[{
         icontype:"icon-lipinicon text-rose",
         tittype:"促销",
-        moreurlname:"search",
+        moreurlname:"list/Product/3",
         moretit:"更多"
       }],      
       supplierstit:[{
         icontype:"icon-shangjia text-green",
         tittype:"商家",
-        moreurlname:"search",
+        moreurlname:"list/Supplier/0",
         moretit:"更多"
       }],
       productdata:{},
@@ -93,8 +93,9 @@ export default {
   },
   mounted (){
        let _sel=this
+       let token=localStorage.getItem("token")
        // 请求首页数据
-       _sel.$http.get(this.api+'/Index',{Token:"12344"}).then((response) => {
+       _sel.$http.get(this.api+'/Mall/Index',{Token:token}).then((response) => {
             //轮播图列表
             _sel.shufflingdata=response.data.data.Advent
             //商品列表
@@ -103,10 +104,12 @@ export default {
             _sel.newproductsdata=response.data.data.NewProduct  
             //促销列表
             _sel.promoproductdata=response.data.data.PromoProduct
-            console.log(_sel.promoproducdata)
-          
             //商家列表
-            _sel.suppliersdata=response.data.data.Supplier                                   
+            _sel.suppliersdata=response.data.data.Supplier 
+            _sel.suppliersdata.map(function(item){
+                item.labelico ="ren";
+            })
+
        }, (response) => {
             console.log('出错啦')
        })
@@ -139,8 +142,4 @@ export default {
       background: rgba(0, 0, 0, 0)
     }
   }
-
-
-
-
 </style>

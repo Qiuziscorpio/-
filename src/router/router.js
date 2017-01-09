@@ -1,6 +1,8 @@
 'use strict'
 import index from '../components/Index'
 import search from '../components/Search'
+import list from '../components/List'
+
 
 export default [
 
@@ -17,5 +19,11 @@ export default [
         path:'/search', 
         component: search, 
         name:'search'
-    }
+    },
+    //更多列表页
+    { 
+        path:'/list/:type/:id', 
+        component: list, 
+        name:'list'
+    }    
 ]
