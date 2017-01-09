@@ -1,10 +1,10 @@
 <template>
 <div>
   <div class="flex-row xs">
-    <div class="flex-grid flex-grid3" v-for="data in showlist">
+    <div class="flex-grid flex-grid3" v-for="data in searchdata">
       <div class="panel">
         <div class="panel-img">
-          <img :src="data.CoverImg">
+          <img :src="data.CoverImg" v-lazy="data.CoverImg">
           <div class="panel-radius">
             <div class="panel-radius-icon bg-blue" v-if="data.IsNew===true">
               <i class="icon iconfont icon-xinpin1"></i>
@@ -47,26 +47,30 @@ export default {
   methods: {    
     keydata:function(val){  
           let _sel=this   
-          _sel.key=val
-          return _sel.showlist.filter(function (item) {
-                if(item.labelico==="ren"){
-                   if (item.Name.indexOf(_sel.key)>-1){
-                       _sel.itemlist.push(item)
-                       return _sel.showlist=_sel.itemlist        
-                   } 
-                }
-          })          
+          _sel.key=val        
     }    			
   },  
   computed: {
+      //关键字筛选
+      searchdata: function() {
+        let _sel=this  
+        if (_sel.key) {
+          return _sel.datalist.filter(function(item) {
+            return Object.keys(item).some(function(key) {
+                if(item.Title){
+                    return String(item.Title).indexOf(_sel.key) > -1
+                }
+                if(item.Name){
+                    return String(item.Name).indexOf(_sel.key) > -1
+                }               
+            })
+          })
+        }
+        return this.datalist;
+      }    
   },
   mounted() {
     this.$root.$on('key',this.keydata)	
-    let _sel=this
-    setTimeout(function(){
-      _sel.showlist=_sel.datalist
-    },500)
-
   }
 }
 </script>
