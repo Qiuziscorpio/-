@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-link :to="{ name: 'search' }" tag="div" class="radius">
+    <router-link :to="{ name: 'personalcenter',params:{id:'1'}}" tag="div" class="radius">
       <div class="radius-icon bg-yellow">
         <i class="icon iconfont icon-ren1"></i>
       </div> 

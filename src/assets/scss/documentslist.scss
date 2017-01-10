@@ -1,0 +1,56 @@
+@import "confi.scss";
+
+.documents{
+    position: relative;
+    padding:0 px2rem(22px);
+    margin-bottom: px2rem(22px);
+    color: $theme;
+    background: #fff;
+    .companyname{
+        font-size: px2rem(30px);
+        padding: px2rem(22px);
+        display: flex;
+        justify-content:space-between;        
+    }
+    i{
+         @include fc(30px,#bebebe)
+    }
+    .labela,.labelb,.status{
+        padding: px2rem(22px);
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        font-size: px2rem(24px);
+        position: relative;
+        &:before{
+            width: 100%;
+            content:"";
+            position: absolute;
+            left:0;
+            top:0;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-top:px2rem(1px) solid #efefef;
+        }         
+    }
+    &:after{
+        width: 100%;
+        content:"";
+        position: absolute;
+        top:0;
+        left:0;
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;                    
+        border-top:px2rem(1px) solid #efefef;
+    }
+    &:before{
+        width: 100%;
+        content:"";
+        position: absolute;
+        left:0;
+        bottom:0;
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;                    
+        border-bottom:px2rem(1px) solid #efefef;
+    }            
+}

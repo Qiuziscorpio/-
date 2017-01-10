@@ -1,0 +1,60 @@
+@import "confi.scss";
+
+.item{
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: px2rem(25px);
+    font-size: 26px;
+    background: #fff;
+    .tit{
+        flex: 0 0 95%;
+        font-size: px2rem(36px);
+        i{
+            @include fc(40px,$yellow)
+        }
+    }
+    .open{
+        i{
+            @include fc(40px,#dcdcdc)
+        }
+    }
+    &:after{
+        width: 100%;
+        content:"";
+        position: absolute;
+        bottom: 0;
+        left:0;
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;                    
+        border-bottom:px2rem(1px) solid #efefef;
+    } 
+    &:before{
+        width: 100%;
+        content:"";
+        position: absolute;
+        top: 0;
+        left:0;
+        -webkit-transform:scaleY(.5);
+        -webkit-transform-origin:0 0;                    
+        border-top:px2rem(1px) solid #efefef;
+    } 
+    &.distancetop{
+        margin-top: px2rem(24px)
+    } 
+    .portrait{
+        flex: 0 0 20%;
+        margin-right:5%;
+        img{
+            width: 100%;
+            max-width: 100%;
+            border-radius: px2rem(10px)
+        }
+    }
+    .userinfor{
+        flex: 1;
+        .name{
+            @include fc(36px,$theme);
+        }
+    }      
+}

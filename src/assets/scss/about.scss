@@ -1,0 +1,52 @@
+@import "confi.scss";
+
+.about{
+    .content{
+        padding: px2rem(30px);
+        line-height: px2rem(40px);
+        .logo-img{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:  px2rem(83px) 0;
+            img{
+                width: px2rem(140px);
+
+            }
+        }
+    }
+    .contact{
+        position: fixed;
+        width: 100%;
+        bottom:px2rem(5px);
+        display:flex;
+        padding:px2rem(22px);
+        align-items: center;
+        box-sizing: border-box;
+        -moz-box-sizing: border-box; 
+        -webkit-box-sizing: border-box;         
+        @include fc(24px,$theme);
+        .tit{
+            flex: 0 0 50%;
+        }
+        .phone{
+            flex: 0 0 50%;
+            text-align: right;
+            i{
+                @include fc(35px,$yellow); 
+            }
+        } 
+        &:after{
+            width: 100%;
+            content:"";
+            position: absolute;
+            top: 0;
+            left:0;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-top:px2rem(1px) solid #efefef;
+        }         
+
+    }
+
+}

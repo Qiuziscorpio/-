@@ -63,10 +63,9 @@ export default {
             //商品信息
              _sel.goodsmessagedata=response.body.data.Product
              _sel.goodsmessagedata.IsFav=response.body.data.IsFav
-             let description= response.body.data.Product.Description
-             _sel.goodsmessagedata.descriptiondata=JSON.parse(description)
+             _sel.goodsmessagedata.descriptiondata=JSON.parse(response.body.data.Product.Description)
              
-            console.log( response.body.data.Promos)  
+            console.log(  _sel.goodsmessagedata.descriptiondata)  
 
 
              

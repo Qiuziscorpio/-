@@ -63,62 +63,53 @@ a {
 .text-rose {
   color: #e4195b; }
 
-.pane-C .panel-C-head {
-  display: flex;
+.documents {
   position: relative;
-  padding: 0.6875rem; }
-  .pane-C .panel-C-head:after {
+  padding: 0 0.6875rem;
+  margin-bottom: 0.6875rem;
+  color: #565656;
+  background: #fff; }
+  .documents .companyname {
+    font-size: 0.9375rem;
+    padding: 0.6875rem;
+    display: flex;
+    justify-content: space-between; }
+  .documents i {
+    font-size: 0.9375rem;
+    color: #bebebe; }
+  .documents .labela, .documents .labelb, .documents .status {
+    padding: 0.6875rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    position: relative; }
+    .documents .labela:before, .documents .labelb:before, .documents .status:before {
+      width: 100%;
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      -webkit-transform: scaleY(0.5);
+      -webkit-transform-origin: 0 0;
+      border-top: 0.03125rem solid #efefef; }
+  .documents:after {
     width: 100%;
     content: "";
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     -webkit-transform: scaleY(0.5);
     -webkit-transform-origin: 0 0;
-    border-bottom: 0.03125rem solid #efefef; }
-  .pane-C .panel-C-head .img {
-    flex: 0 0 20%; }
-    .pane-C .panel-C-head .img img {
-      width: 100%;
-      max-width: 100%; }
-  .pane-C .panel-C-head .content {
-    flex: 1;
-    font-size: 0.9375rem;
-    color: #565656; }
-    .pane-C .panel-C-head .content .site {
-      margin-top: 0.3125rem;
-      display: flex;
-      font-size: 0.75rem;
-      color: #8c8c8c; }
-      .pane-C .panel-C-head .content .site .label {
-        flex: 0 0 10%; }
-.pane-C .panel-C-content {
-  display: flex;
-  text-align: center;
-  position: relative; }
-  .pane-C .panel-C-content:after {
+    border-top: 0.03125rem solid #efefef; }
+  .documents:before {
     width: 100%;
     content: "";
     position: absolute;
-    height: 5.5rem;
-    left: -50%;
+    left: 0;
+    bottom: 0;
     -webkit-transform: scaleY(0.5);
     -webkit-transform-origin: 0 0;
-    border-right: 0.03125rem solid #efefef; }
-  .pane-C .panel-C-content .contact {
-    flex: 50%;
-    padding: 0.6875rem;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; }
-    .pane-C .panel-C-content .contact i {
-      font-size: 1.09375rem;
-      color: #ffb71b; }
-  .pane-C .panel-C-content .shop {
-    padding: 0.6875rem;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    flex: 50%; }
+    border-bottom: 0.03125rem solid #efefef; }
 
-/*# sourceMappingURL=panel-C.css.map */
+/*# sourceMappingURL=documentslist.css.map */

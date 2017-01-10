@@ -47,6 +47,7 @@
     position: relative;
     padding: px2rem(22px);
     margin-bottom: px2rem(22px);
+    background: #fff;
     &:after{
         width: 100%;
         content:"";

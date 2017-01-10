@@ -25,7 +25,7 @@
           时间 <span>2015-5-12</span>
         </li>
         <li class="param-list">
-          品牌 <span> {{goodsmessagedata.descriptiondata.brand}}</span>
+          品牌 <span> </span>
         </li>
         <li class="param-list">
           条码 <span>{{goodsmessagedata.BarCode}}</span>
@@ -54,7 +54,6 @@
       }
     },    
     mounted() {
-      console.log(this.goodsmessagedata)
     }  
   }
 </script>

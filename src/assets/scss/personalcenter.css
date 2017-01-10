@@ -63,11 +63,23 @@ a {
 .text-rose {
   color: #e4195b; }
 
-.pane-C .panel-C-head {
-  display: flex;
+.item {
   position: relative;
-  padding: 0.6875rem; }
-  .pane-C .panel-C-head:after {
+  display: flex;
+  align-items: center;
+  padding: 0.78125rem;
+  font-size: 26px;
+  background: #fff; }
+  .item .tit {
+    flex: 0 0 95%;
+    font-size: 1.125rem; }
+    .item .tit i {
+      font-size: 1.25rem;
+      color: #ffb71b; }
+  .item .open i {
+    font-size: 1.25rem;
+    color: #dcdcdc; }
+  .item:after {
     width: 100%;
     content: "";
     position: absolute;
@@ -76,49 +88,28 @@ a {
     -webkit-transform: scaleY(0.5);
     -webkit-transform-origin: 0 0;
     border-bottom: 0.03125rem solid #efefef; }
-  .pane-C .panel-C-head .img {
-    flex: 0 0 20%; }
-    .pane-C .panel-C-head .img img {
-      width: 100%;
-      max-width: 100%; }
-  .pane-C .panel-C-head .content {
-    flex: 1;
-    font-size: 0.9375rem;
-    color: #565656; }
-    .pane-C .panel-C-head .content .site {
-      margin-top: 0.3125rem;
-      display: flex;
-      font-size: 0.75rem;
-      color: #8c8c8c; }
-      .pane-C .panel-C-head .content .site .label {
-        flex: 0 0 10%; }
-.pane-C .panel-C-content {
-  display: flex;
-  text-align: center;
-  position: relative; }
-  .pane-C .panel-C-content:after {
+  .item:before {
     width: 100%;
     content: "";
     position: absolute;
-    height: 5.5rem;
-    left: -50%;
+    top: 0;
+    left: 0;
     -webkit-transform: scaleY(0.5);
     -webkit-transform-origin: 0 0;
-    border-right: 0.03125rem solid #efefef; }
-  .pane-C .panel-C-content .contact {
-    flex: 50%;
-    padding: 0.6875rem;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box; }
-    .pane-C .panel-C-content .contact i {
-      font-size: 1.09375rem;
-      color: #ffb71b; }
-  .pane-C .panel-C-content .shop {
-    padding: 0.6875rem;
-    box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
-    flex: 50%; }
+    border-top: 0.03125rem solid #efefef; }
+  .item.distancetop {
+    margin-top: 0.75rem; }
+  .item .portrait {
+    flex: 0 0 20%;
+    margin-right: 5%; }
+    .item .portrait img {
+      width: 100%;
+      max-width: 100%;
+      border-radius: 0.3125rem; }
+  .item .userinfor {
+    flex: 1; }
+    .item .userinfor .name {
+      font-size: 1.125rem;
+      color: #565656; }
 
-/*# sourceMappingURL=panel-C.css.map */
+/*# sourceMappingURL=personalcenter.css.map */

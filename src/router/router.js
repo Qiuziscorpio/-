@@ -4,6 +4,11 @@ import search from '../components/Search'
 import list from '../components/List'
 import detail from '../components/Detail'
 import supplierdetail from '../components/SupplierDetail'
+import personalcenter from '../components/Personalcenter'
+import about from '../components/About'
+import documents from '../components/Documents'
+
+
 
 export default [
 
@@ -38,5 +43,23 @@ export default [
         path:'/supplierdetail/:id', 
         component:supplierdetail, 
         name:'supplierdetail'
-    }             
+    }, 
+    //个人中心
+    { 
+        path:'/personalcenter/:id', 
+        component:personalcenter, 
+        name:'personalcenter'
+    }, 
+    //外部单据
+    { 
+        path:'/documents', 
+        component:documents, 
+        name:'documents'
+    },      
+    //关于
+    { 
+        path:'/about', 
+        component:about, 
+        name:'about'
+    }                    
 ]

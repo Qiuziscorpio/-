@@ -63,4 +63,44 @@ a {
 .text-rose {
   color: #e4195b; }
 
-/*# sourceMappingURL=confi.css.map */
+.about .content {
+  padding: 0.9375rem;
+  line-height: 1.25rem; }
+  .about .content .logo-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.59375rem 0; }
+    .about .content .logo-img img {
+      width: 4.375rem; }
+.about .contact {
+  position: fixed;
+  width: 100%;
+  bottom: 0.15625rem;
+  display: flex;
+  padding: 0.6875rem;
+  align-items: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-size: 0.75rem;
+  color: #565656; }
+  .about .contact .tit {
+    flex: 0 0 50%; }
+  .about .contact .phone {
+    flex: 0 0 50%;
+    text-align: right; }
+    .about .contact .phone i {
+      font-size: 1.09375rem;
+      color: #ffb71b; }
+  .about .contact:after {
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    border-top: 0.03125rem solid #efefef; }
+
+/*# sourceMappingURL=about.css.map */
