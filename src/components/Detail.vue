@@ -67,7 +67,6 @@ export default {
              
             console.log(  _sel.goodsmessagedata.descriptiondata)  
 
-
              
             //供应商数据
             _sel.contactdata=response.body.data.Supplier
