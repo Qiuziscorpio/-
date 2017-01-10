@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="panel-B">
-    {{goodsmessagedata.Description}}
+    {{goodsmessagedata.descriptiondata}}
     <div class="panel-B-head">
       <div class="tit">
         <span class="text-rose" v-if="goodsmessagedata.IsNew===false">[促销]</span> {{goodsmessagedata.Title}}
@@ -25,7 +25,7 @@
           时间 <span>2015-5-12</span>
         </li>
         <li class="param-list">
-          品牌 <span></span>
+          品牌 <span> {{goodsmessagedata.descriptiondata.brand}}</span>
         </li>
         <li class="param-list">
           条码 <span>{{goodsmessagedata.BarCode}}</span>
@@ -34,7 +34,7 @@
           厂家 <span>69292880008</span>
         </li>
         <li class="param-list">
-          其他 <span>规格：10*90</span>
+          其他 <span> {{goodsmessagedata.descriptiondata.other}} </span>
         </li>
       </ul>
     </div>
