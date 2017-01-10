@@ -16,7 +16,7 @@
     <navmenu></navmenu>
     <!--商品列表 商品 新品 促销 商家-->
     <headline :headline="producttit"></headline>
-    <goodslist :datalist="productdata"  ></goodslist>      
+    <goodslist :datalist="productdata"></goodslist>      
     <headline :headline="newproductstit"></headline>
     <goodslist :datalist="newproductsdata"  ></goodslist>            
     <headline :headline="promoproductstit"></headline>
@@ -54,25 +54,33 @@ export default {
       producttit:[{
         icontype:"icon-xuanshangpin text-yellow",
         tittype:"商品",
-        moreurlname:"list/Product/1",
+        moreurlname:"list",
+        moreurltype:"Product",  
+        moreurlid:"1",
         moretit:"更多"
       }],      
       newproductstit:[{
         icontype:"icon-icon111 text-blue",
         tittype:"新品",
-        moreurlname:"list/Product/2",
+        moreurlname:"list",
+        moreurltype:"Product",  
+        moreurlid:"2",
         moretit:"更多"
       }],       
       promoproductstit:[{
         icontype:"icon-lipinicon text-rose",
         tittype:"促销",
-        moreurlname:"list/Product/3",
+        moreurlname:"list",
+        moreurltype:"Product",        
+        moreurlid:"3",          
         moretit:"更多"
       }],      
       supplierstit:[{
         icontype:"icon-shangjia text-green",
         tittype:"商家",
-        moreurlname:"list/Supplier/0",
+        moreurlname:"list",
+        moreurltype:"Supplier",  
+        moreurlid:"0",        
         moretit:"更多"
       }],
       productdata:{},
@@ -100,14 +108,24 @@ export default {
             _sel.shufflingdata=response.data.data.Advent
             //商品列表
             _sel.productdata=response.data.data.Product
+            _sel.productdata.map(function(item){
+                item.routername ="detail";
+            })            
             //新品列表
             _sel.newproductsdata=response.data.data.NewProduct  
+             _sel.newproductsdata.map(function(item){
+                item.routername ="detail";
+            })            
             //促销列表
             _sel.promoproductdata=response.data.data.PromoProduct
+             _sel.promoproductdata.map(function(item){
+                item.routername ="detail";
+            })             
             //商家列表
             _sel.suppliersdata=response.data.data.Supplier 
             _sel.suppliersdata.map(function(item){
                 item.labelico ="ren";
+                item.routername ="supplierdetail";
             })
 
        }, (response) => {

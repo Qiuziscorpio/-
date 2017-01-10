@@ -1,0 +1,64 @@
+@import "confi.scss";
+
+.panel-B{
+     @include fc(34px,$theme)
+    .panel-B-head{
+        position: relative;
+        padding: px2rem(22px);
+        color:$theme;
+        &:after{
+            width: 100%;
+            content:"";
+            position: absolute;
+            bottom: 0;
+            left:0;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-bottom:px2rem(1px) solid #efefef;
+        }
+        .label{
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            .num{
+                .current{
+                    font-size: px2rem(58px)
+                }
+                .original{
+                    @include fc(30px,#cdcdcd);
+                    text-decoration:line-through;
+                }
+            }
+        }
+        .collect{
+            font-size: px2rem(30px);
+           i{
+                @include fc(40px,$yellow)
+           }
+        }
+    }
+    .panel-B-content{
+        position: relative;
+        padding: px2rem(22px);        
+        @include fc(28px,$theme)
+        &:after{
+            width: 100%;
+            content:"";
+            position: absolute;
+            bottom: 0;
+            left:0;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-bottom:px2rem(1px) solid #efefef;
+        }
+        .param{
+            display: flex;
+            flex-flow: column;
+            .param-list{
+                flex: 1;
+                margin-bottom: px2rem(11px);     
+            }
+        }
+
+    }
+}

@@ -2,7 +2,8 @@
 import index from '../components/Index'
 import search from '../components/Search'
 import list from '../components/List'
-
+import detail from '../components/Detail'
+import supplierdetail from '../components/SupplierDetail'
 
 export default [
 
@@ -25,5 +26,17 @@ export default [
         path:'/list/:type/:id', 
         component: list, 
         name:'list'
-    }    
+    },
+    //商品列表页详情
+    { 
+        path:'/detail/:id', 
+        component:detail, 
+        name:'detail'
+    },
+    //企业列表页详情
+    { 
+        path:'/supplierdetail/:id', 
+        component:supplierdetail, 
+        name:'supplierdetail'
+    }             
 ]

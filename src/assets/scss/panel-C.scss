@@ -1,0 +1,71 @@
+@import "confi.scss";
+
+.pane-C{
+    .panel-C-head{
+        display: flex;
+        position: relative;
+        padding: px2rem(22px);
+        &:after{
+            width: 100%;
+            content:"";
+            position: absolute;
+            bottom: 0;
+            left:0;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-bottom:px2rem(1px) solid #efefef;
+        }        
+        .img{
+              flex:0 0 20%;
+              img {
+                  width: 100%;
+                  max-width: 100%;
+              }
+        }
+        .content{
+            flex:1;
+            @include fc(30px,$theme);
+            .site{
+                margin-top: px2rem(10px);
+                display: flex;
+                 @include fc(24px,#8c8c8c);
+                 .label{
+                     flex: 0 0 10%;
+                 }
+
+            }
+        }
+    }
+    .panel-C-content{
+        display: flex;   
+        text-align: center;
+        position: relative;        
+        &:after{
+            width: 100%;
+            content:"";
+            position: absolute;
+            height: px2rem(176px);
+            left:-50%;
+            -webkit-transform:scaleY(.5);
+            -webkit-transform-origin:0 0;                    
+            border-right:px2rem(1px) solid #efefef;
+        }         
+        .contact{
+            flex: 50%;
+            padding: px2rem(22px);
+            box-sizing: border-box;
+            -moz-box-sizing: border-box; 
+            -webkit-box-sizing: border-box;                                    
+            i{
+               @include fc(35px,$yellow); 
+            }
+        }  
+        .shop{
+            padding: px2rem(22px);
+            box-sizing: border-box;
+            -moz-box-sizing: border-box; 
+            -webkit-box-sizing: border-box;             
+            flex: 50%;
+        }   
+    }
+}

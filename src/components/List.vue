@@ -39,15 +39,24 @@ export default {
                 // 普通商品           
                 if(listid==="1"){
                   _sel.productdata=response.body.data
+                  _sel.productdata.map(function(item){
+                      item.routername ="detail";
+                  })                   
                   _sel.value="搜索商品/新品/促销/商家"
                 }          
                 if(listid==="2"){
                     _sel.productdata=response.body.data
+                    _sel.productdata.map(function(item){
+                        item.routername ="detail";
+                    })                    
                     _sel.value="搜索新品"
                     console.log("请求的是新品")
                 }
                 if(listid==="3"){                
                     _sel.productdata=response.body.data
+                    _sel.productdata.map(function(item){
+                        item.routername ="detail";
+                    })                    
                     console.log("请求的是促销品")
                      _sel.value="搜索促销品"
                 }                                  
@@ -62,6 +71,7 @@ export default {
                 _sel.productdata=response.body.data    
                 _sel.productdata.map(function(item){
                     item.labelico ="ren";
+                    item.routername ="supplierdetail";
                 })
                 _sel.value="搜索供应商"                                    
             },(response) => {

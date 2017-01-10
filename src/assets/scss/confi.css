@@ -8,11 +8,19 @@ html {
   font-family: "微软雅黑";
   min-width: 320px; }
 
+ul li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: #565656; }
+
 .flex-row {
   display: -webkit-flex;
   display: flex; }
   .flex-row.xs {
-    margin: 0 0.34375rem; }
+    margin: 0 0.34375rem;
+    flex-wrap: wrap; }
 
 .flex-grid {
   flex: 1;

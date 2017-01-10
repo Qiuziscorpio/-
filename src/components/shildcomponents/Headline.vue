@@ -4,7 +4,7 @@
         <div class="tit">
            <i class="icon iconfont" :class="data.icontype"></i><span> {{data.tittype}}</span>
         </div>
-        <router-link :to="{ path:data.moreurlname }" tag="div" class="more">
+        <router-link :to="{name:data.moreurlname,params:{type:data.moreurltype,id:data.moreurlid}}" tag="div" class="more" v-if="data.moreurlname">
            {{data.moretit}}
         </router-link>        
       </div>
