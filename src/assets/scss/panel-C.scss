@@ -24,13 +24,13 @@
         }
         .content{
             flex:1;
-            @include fc(30px,$theme);
+            @include fc(34px,$theme);
             .site{
                 margin-top: px2rem(10px);
                 display: flex;
-                 @include fc(24px,#8c8c8c);
+                 @include fc(28px,#8c8c8c);
                  .label{
-                     flex: 0 0 10%;
+                     flex: 0 0 14%;
                  }
 
             }
@@ -57,7 +57,7 @@
             -moz-box-sizing: border-box; 
             -webkit-box-sizing: border-box;                                    
             i{
-               @include fc(35px,$yellow); 
+               @include fc(40px,$yellow); 
             }
         }  
         .shop{

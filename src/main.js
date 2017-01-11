@@ -17,11 +17,11 @@ const router = new Router({
 })
 
 // 数据接口
-Vue.prototype.api="http://rap.taobao.org/mockjsdata/11407"
+Vue.prototype.api="http://api.91ygj.net/WeChatMall"
 
 //用户的登录令牌
-var Token="123456abc"
-localStorage.setItem("token",Token)
+var token="773957bbc5ea45fcad69f1dd11ed1688"
+localStorage.setItem("token",token)
 
 /* eslint-disable no-new */
 new Vue({ // eslint-disable-line

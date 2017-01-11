@@ -92,7 +92,7 @@ export default {
   methods:{
     //搜索
     search:function(){
-      this.$router.push({name:'search'})
+      this.$router.push({name:'search'})      
     },
     //扫一扫
     scan:function(){
@@ -103,29 +103,29 @@ export default {
        let _sel=this
        let token=localStorage.getItem("token")
        // 请求首页数据
-       _sel.$http.get(this.api+'/Mall/Index',{Token:token}).then((response) => {
+       _sel.$http.get(this.api+'/Mall/Index?token='+token).then((response) => {
             //轮播图列表
-            _sel.shufflingdata=response.data.data.Advent
+            _sel.shufflingdata=response.data.data.Advents
             //商品列表
-            _sel.productdata=response.data.data.Product
+            _sel.productdata=response.data.data.Products        
             _sel.productdata.map(function(item){
                 item.routername ="detail";
             })            
             //新品列表
-            _sel.newproductsdata=response.data.data.NewProduct  
+            _sel.newproductsdata=response.data.data.NewProducts
              _sel.newproductsdata.map(function(item){
                 item.routername ="detail";
             })            
             //促销列表
-            _sel.promoproductdata=response.data.data.PromoProduct
+            _sel.promoproductdata=response.data.data.PromoProducts
              _sel.promoproductdata.map(function(item){
                 item.routername ="detail";
             })             
             //商家列表
-            _sel.suppliersdata=response.data.data.Supplier 
+            _sel.suppliersdata=response.data.data.Suppliers
             _sel.suppliersdata.map(function(item){
                 item.labelico ="ren";
-                item.routername ="supplierdetail";
+                item.routername ="supplierdetaillist";
             })
 
        }, (response) => {

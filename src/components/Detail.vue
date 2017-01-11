@@ -5,7 +5,7 @@
     <!--图片轮播图-->
     <shuffling :shufflingdata="shufflingdata"></shuffling>
     <!--商品信息-->
-    <goodsmessage :goodsmessagedata="goodsmessagedata"></goodsmessage>
+    <goodsmessage :goodsmessagedata="goodsmessagedata" :descriptiondata="descriptiondata" :promosdata="promosdata" :supplierdata="supplierdata"></goodsmessage>
      <!--联系模块-->
     <contact :contact="contactdata"></contact>   
     <!--标题-->
@@ -44,6 +44,9 @@ export default {
       productdata:{},
       contactdata:{},
       goodsmessagedata:{},
+      descriptiondata:{},
+      promosdata:{},
+      supplierdata:{},
       producttit:[{
         icontype:"icon-xuanshangpin text-yellow",
         tittype:"推荐商品"
@@ -52,22 +55,27 @@ export default {
   },
   mounted(){
         let _sel=this
-       // let apiid=_sel.$route.params.id
+        let apiid=_sel.$route.params.id
         //模拟数据
-        let apiid="123456"
         let token=localStorage.getItem("token")
-        // 请求详情页数据
-        _sel.$http.get(this.api+'/Product/Info/'+apiid,{Token:token}).then((response) => {
+        // 请求详情页数据         
+        _sel.$http.get(this.api+'/Product/Info/'+_sel.$route.params.id+'?token='+token).then((response) => {
+            
             //轮播图数据   
-             _sel.shufflingdata=response.body.data.ProductImgs  
+             _sel.shufflingdata=response.body.data.ProductImgs              
             //商品信息
              _sel.goodsmessagedata=response.body.data.Product
-             _sel.goodsmessagedata.IsFav=response.body.data.IsFav
-             _sel.goodsmessagedata.descriptiondata=JSON.parse(response.body.data.Product.Description)
-             
-            console.log(  _sel.goodsmessagedata.descriptiondata)  
+             _sel.goodsmessagedata.IsFav=response.body.data.IsFav           
+             _sel.descriptiondata=JSON.parse(response.body.data.Product.Description)
 
-             
+             _sel.promosdata=response.body.data.Product.Promos   
+             _sel.supplierdata=response.body.data.Supplier         
+             //关联产品 
+             _sel.productdata=response.body.data.CrossSale
+              _sel.productdata.map(function(item){
+                item.routername ="detail";
+              })              
+
             //供应商数据
             _sel.contactdata=response.body.data.Supplier
             _sel.contactdata.routername="supplierdetail"

@@ -1,7 +1,7 @@
 @import "confi.scss";
 
 .panel-B{
-     @include fc(34px,$theme)
+     @include fc(38px,$theme);
     .panel-B-head{
         position: relative;
         padding: px2rem(22px);
@@ -31,7 +31,7 @@
             }
         }
         .collect{
-            font-size: px2rem(30px);
+            font-size: px2rem(34px);
            i{
                 @include fc(40px,$yellow)
            }
@@ -40,7 +40,7 @@
     .panel-B-content{
         position: relative;
         padding: px2rem(22px);        
-        @include fc(28px,$theme)
+        @include fc(32px,$theme);
         &:after{
             width: 100%;
             content:"";

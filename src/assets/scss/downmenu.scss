@@ -1,0 +1,15 @@
+@import "confi.scss";
+.downmenubtn{
+    flex: 0 0 20%;
+    background: #ffb71b;
+    @include fc(30px,#fff);
+    padding:px2rem(16px) px2rem(23px);
+    position: relative;
+    .downmenu{
+        position: absolute;
+        top: 0;
+        li{
+             @include fc(30px,$theme);
+        }
+    }
+}

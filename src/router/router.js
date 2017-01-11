@@ -39,11 +39,23 @@ export default [
         name:'detail'
     },
     //企业列表页详情
-    { 
-        path:'/supplierdetail/:id', 
-        component:supplierdetail, 
-        name:'supplierdetail'
-    }, 
+    {
+        path: '/supplierdetail/:id',
+        component: supplierdetail,
+        name: "supplierdetail",
+        children: [{
+                path: '',
+                component: list,
+                name: "supplierdetaillist"
+            },
+            //全部 商品  新品 促销
+            {
+                path: 'supplierdetaillist/:type/:id',
+                component: list,
+                name: "supplierdetaillist"
+            }           
+        ]
+    },
     //个人中心
     { 
         path:'/personalcenter/:id', 

@@ -5,7 +5,7 @@ html,body,div,img,p,ul,li {
 }
 html ,body{
     font-size: 16px;
-    font-family: "微软雅黑";
+    font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     min-width: 320px;
     height: 100%;
 }
@@ -64,13 +64,18 @@ $rose:#e4195b;
         -ms-flex: 0 0 33.333%;      
     }
 }
-
 .verticalheight{
     height:100vh;
     background: #fafafa;
     box-sizing: border-box;
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box;    
+}
+.show{
+    display: block;
+}
+.hide{
+    display: none;
 }
 
 //颜色

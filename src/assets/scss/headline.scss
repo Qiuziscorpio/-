@@ -7,13 +7,13 @@
     justify-content:space-between;
     padding: px2rem(22px);
     .tit{
-          @include fc(30px,$theme)
+          @include fc(34px,$theme)
         i{
-          font-size:px2rem(35px)
+          font-size:px2rem(40px)
         }
     }
     .more{
-        @include fc(24px,#8c8c8c)
+        @include fc(28px,#8c8c8c);   
     }
     &:after{
         width: 100%;

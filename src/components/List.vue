@@ -4,6 +4,7 @@
       <!--搜索条-->
       <searchbar :placeholder="value"></searchbar>
       <goodslist :datalist="productdata"></goodslist>
+      谁做的饭
     </div> 
   </div>
 </template>

@@ -27,10 +27,11 @@
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             overflow: hidden;            
-            @include fc(24px,$theme)
+            @include fc(28px,$theme)
         }
         .num{
-            font-size: px2rem(24px)
+            font-size: px2rem(28px);
+            font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
         }
         padding-bottom: px2rem(46px)
     }

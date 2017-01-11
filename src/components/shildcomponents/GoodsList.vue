@@ -1,8 +1,10 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-       <router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">
-          <div class="panel">
+    <div class="flex-grid flex-grid3"   v-for="data in searchdata" v-on:click="kk">
+       <!--<router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">-->
+          <div class="panel">  
+            {{data.routername}}              
             <div class="panel-img">
               <img :src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-radius">
@@ -25,7 +27,8 @@
               </div>          
             </div>
           </div>
-      </router-link>
+         </div>
+   <!-- </router-link>-->
   </div>
 </div>
 </template>
@@ -48,7 +51,10 @@ export default {
     keydata:function(val){  
           let _sel=this   
           _sel.key=val        
-    }    			
+    },  
+    kk:function(){
+       this.$router.push({ name: 'detail', params: { id: 'a0d8e00b-f0bd-441c-8574-9bb69ca8beee' }})
+    } 			
   },  
   computed: {
       //关键字筛选

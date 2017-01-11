@@ -25,7 +25,7 @@
         box-sizing: border-box;
         -moz-box-sizing: border-box; 
         -webkit-box-sizing: border-box;         
-        @include fc(24px,$theme);
+        @include fc(28px,$theme);
         .tit{
             flex: 0 0 50%;
         }
