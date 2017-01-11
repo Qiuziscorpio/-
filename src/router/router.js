@@ -7,6 +7,8 @@ import supplierdetail from '../components/SupplierDetail'
 import personalcenter from '../components/Personalcenter'
 import about from '../components/About'
 import documents from '../components/Documents'
+import companydata from '../components/shildcomponents/Companydata'
+
 
 
 
@@ -53,7 +55,13 @@ export default [
                 path: 'supplierdetaillist/:type/:id',
                 component: list,
                 name: "supplierdetaillist"
-            }           
+            },
+            //商家信息
+            {
+                path: 'companydata/:type/:id',
+                component: companydata,
+                name: "companydata"
+            }                        
         ]
     },
     //个人中心

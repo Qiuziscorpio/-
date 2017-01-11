@@ -5,7 +5,7 @@
         <div class="search">
           <div class="downmenu">
             <div class="downmenubtn">
-              商品
+              商品 <i class="icon iconfont icon-xia"></i>
             </div>
             <ul class="downmenulist hide">
               <li>商品</li>

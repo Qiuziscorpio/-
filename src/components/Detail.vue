@@ -65,7 +65,10 @@ export default {
              _sel.shufflingdata=response.body.data.ProductImgs              
             //商品信息
              _sel.goodsmessagedata=response.body.data.Product
-             _sel.goodsmessagedata.IsFav=response.body.data.IsFav           
+
+             console.log(response.body.data.Product)
+
+             _sel.goodsmessagedata.IsFav=response.body.data.IsFav        
              _sel.descriptiondata=JSON.parse(response.body.data.Product.Description)
 
              _sel.promosdata=response.body.data.Product.Promos   

@@ -44,9 +44,9 @@ export default {
           active:false          
         },  
          {
-          tabname:"supplierdetaillist",
-          tabtit:"促销",
-          tabtype:"detail",
+          tabname:"companydata",
+          tabtit:"商家信息",
+          tabtype:"companydata",
           tabid:"123456abc",
           active:false          
         },                       

@@ -1,10 +1,11 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-    <div class="flex-grid flex-grid3"   v-for="data in searchdata" v-on:click="kk">
-       <!--<router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">-->
-          <div class="panel">  
-            {{data.routername}}              
+    <!--:to="{ path:data.routername+'/'+data.Id}"-->
+
+
+       <router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">
+          <div class="panel">                 
             <div class="panel-img">
               <img :src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-radius">
@@ -28,7 +29,7 @@
             </div>
           </div>
          </div>
-   <!-- </router-link>-->
+   </router-link>
   </div>
 </div>
 </template>
