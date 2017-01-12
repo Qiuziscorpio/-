@@ -27,28 +27,28 @@ export default {
           tabtit:"全部商品",
           tabtype:"Product",
           tabid:"1",
-          active:false
+          classactive:false
         },
         {
           tabname:"supplierdetaillist",
           tabtit:"新品",
           tabtype:"Product",
           tabid:"2",
-          active:false
+          classactive:false
         },
         {
           tabname:"supplierdetaillist",
           tabtit:"促销",
           tabtype:"Product",
           tabid:"3",
-          active:false          
+          classactive:false          
         },  
          {
           tabname:"companydata",
           tabtit:"商家信息",
           tabtype:"companydata",
           tabid:"",
-          active:false          
+          classactive:false          
         },                       
       ]
     }

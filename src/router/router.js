@@ -44,6 +44,7 @@ export default [
         name: "supplierdetail",
         children: [
             //全部 商品  新品 促销
+            { path:'',component:list},
             {
                 path: 'supplierdetaillist/:type/:id',
                 component: list,

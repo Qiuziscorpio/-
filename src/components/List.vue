@@ -67,6 +67,8 @@ export default {
     let _sel=this
     let listid=_sel.$route.params.id
     let listapi=_sel.$route.params.type
+    console.log(_sel.$route.params.type)
+
     let token=localStorage.getItem("token")
     //请求列表数据
     if(listapi){
@@ -115,7 +117,20 @@ export default {
             })    
         }
  
-    }   
+    } 
+    if(typeof(listapi)=="undefined") {
+        _sel.$http.get(this.api+'/Product/List/1?token='+token+'&kind=1').then((response) => {   
+                // 普通商品           
+                _sel.productdata=response.body.data
+                _sel.productdata.map(function(item){
+                    item.routername ="detail";
+                })                   
+                _sel.value="搜索商品/新品/促销/商家"
+                 
+            },(response) => {
+                console.log('出错啦')
+            })
+    } 
   }
 }
 </script>
