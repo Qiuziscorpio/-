@@ -31,7 +31,7 @@
     </div>    
     <router-link class="item distancetop"  :to="{name:'documents'}" tag="div"> 
       <div class="tit"> 
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-waibudanju"></i>
         外部单据
       </div>
       <div class="open">
@@ -40,7 +40,7 @@
     </router-link>        
      <router-link class="item distancetop" :to="{name: 'about'}" tag="div">
       <div class="tit"> 
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-guanyu"></i>
         关于蚁管家
       </div>
       <div class="open">

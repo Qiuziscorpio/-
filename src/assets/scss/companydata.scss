@@ -1,0 +1,29 @@
+@import "confi.scss";
+.company{
+    padding: px2rem(22px);
+    color: $theme;
+    .company-item{
+        font-size: px2rem(28px) ;
+        .tit{
+            padding: px2rem(22px) 0;
+            position: relative;
+            &:after{
+                width: 100%;
+                content:"";
+                position: absolute;
+                bottom:0;
+                left:0;
+                -webkit-transform:scaleY(.5);
+                -webkit-transform-origin:0 0;                    
+                border-bottom:px2rem(1px) solid #efefef;
+            }            
+        }
+        .content{
+            font-size: px2rem(22px);
+            padding: px2rem(22px) 0;
+            line-height: px2rem(45px);
+        } 
+      
+    }
+
+}

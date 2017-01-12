@@ -59,6 +59,7 @@
       }
     },    
     mounted() {
+      console.log("再次进入了")
     }  
   }
 </script>
