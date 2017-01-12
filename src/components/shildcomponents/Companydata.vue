@@ -6,8 +6,7 @@
         公司介绍
       </div>
       <div class="content">
-        　第一个发明了真空保温杯：1892年牛津大学的英国人詹姆斯•杜瓦尓爵士。英国TOMIC传承了此项工艺，英伦气质与精湛工艺从此相遇。TOMIC也是保温杯器皿中率先釆用316航空不锈钢材质的品牌。
-　　      创始以来，不仅保持了TOMIC经久不变的经典格调与精湛手工艺，同时也创建了全球设计师联盟，不断融入新时代的创新性设计与时尚概念。让TOMIC一直站在时尚的前端，成为进口保温杯五大品牌之一。
+        {{detail.Desc}}
       </div>
     </div>
     <div class="company-item">
@@ -15,6 +14,7 @@
         联系方式
       </div>
       <div class="content">
+        {{detail.Content}}
         <div class="content-item">
           全国客服官方热线：400-8817-6888
         </div>
@@ -40,16 +40,26 @@
   </div>
 </div>
 </template>
-
-
 <script>
   export default {
-    name: 'companydata',
-    props:{
-    },    
+    name: 'companydata',   
     data() {
       return {
+        detail:{}
       }
+    },
+    mounted(){
+        let _sel=this   
+        let dataid = _sel.$route.params.id
+        let token=localStorage.getItem("token")
+        // 请求详情页数据
+        _sel.$http.get(this.api+'/Supplier/Info/'+dataid+'?token='+token).then((response) => {  
+          //公司信息
+           _sel.detail=response.body.data.Detail 
+             //关联产品    
+        }, (response) => {
+             console.log('出错啦')
+        })      
     }
   }
 </script>

@@ -9,7 +9,6 @@
           陈大选
         </div>
       </div>
-
     </div>    
     <div class="item distancetop">
       <div class="tit"> 
@@ -29,7 +28,7 @@
         <i class="icon iconfont icon-shangjia"></i>
       </div>
     </div>    
-    <router-link class="item distancetop"  :to="{name:'documents'}" tag="div"> 
+    <router-link class="item distancetop"  :to="{name:'documents'}" tag="div" > 
       <div class="tit"> 
         <i class="icon iconfont icon-waibudanju"></i>
         外部单据

@@ -25,6 +25,44 @@ export default {
       value:"" 
     }
   },
+  methods:{   
+    get:function(_sel,listapi,listid){
+            let token=localStorage.getItem("token")
+            _sel.$http.get(this.api+'/'+ listapi+'/List/'+listapi+'?token='+token+'&kind='+listid).then((response) => {   
+                // 普通商品           
+                if(listid==="1"){
+                  _sel.productdata=response.body.data
+                  _sel.productdata.map(function(item){
+                      item.routername ="detail";
+                  })                   
+                  _sel.value="搜索商品/新品/促销/商家"
+                }          
+                if(listid==="2"){
+                    _sel.productdata=response.body.data
+                    _sel.productdata.map(function(item){
+                        item.routername ="detail";
+                    })                    
+                    _sel.value="搜索新品"
+                    console.log("请求的是新品")
+                }
+                if(listid==="3"){                
+                    _sel.productdata=response.body.data
+                    _sel.productdata.map(function(item){
+                        item.routername ="detail";
+                    })                    
+                    console.log("请求的是促销品")
+                     _sel.value="搜索促销品"
+                }                                  
+            },(response) => {
+                console.log('出错啦')
+            })            
+    }
+  },
+  watch:{
+      '$route' (to,from) {
+          this.get(this,to.params.type,to.params.id) 
+      }
+  },  
   mounted(){
     let _sel=this
     let listid=_sel.$route.params.id

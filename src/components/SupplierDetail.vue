@@ -25,29 +25,29 @@ export default {
         {
           tabname:"supplierdetaillist",
           tabtit:"全部商品",
-          tabtype:"detail",
-          tabid:"123456abc",
-          active:true
+          tabtype:"Product",
+          tabid:"1",
+          active:false
         },
         {
           tabname:"supplierdetaillist",
           tabtit:"新品",
-          tabtype:"detail",
-          tabid:"123456abc",
+          tabtype:"Product",
+          tabid:"2",
           active:false
         },
         {
           tabname:"supplierdetaillist",
           tabtit:"促销",
-          tabtype:"detail",
-          tabid:"123456abc",
+          tabtype:"Product",
+          tabid:"3",
           active:false          
         },  
          {
           tabname:"companydata",
           tabtit:"商家信息",
           tabtype:"companydata",
-          tabid:"123456abc",
+          tabid:"",
           active:false          
         },                       
       ]
@@ -55,16 +55,15 @@ export default {
   },
   mounted(){
         let _sel=this
-        let dataid=_sel.$route.params.id
-        //模拟数据
+        let dataid=_sel.$route.params.id      
         let token=localStorage.getItem("token")
         // 请求详情页数据
         _sel.$http.get(this.api+'/Supplier/Info/'+dataid+'?token='+token).then((response) => {  
             //供应商数据
              _sel.contactdata=response.body.data.Supplier
-             _sel.contactdata.routername="supplierdetail"
-
-             //关联产品    
+             _sel.contactdata.routername="supplierdetail" 
+             _sel.tabdata[3].tabid=dataid
+             console.log(_sel.tabdata[3])  
         }, (response) => {
              console.log('出错啦')
         })

@@ -18,6 +18,8 @@ const router = new Router({
 
 // 数据接口
 Vue.prototype.api="http://api.91ygj.net/WeChatMall"
+// erp接口
+Vue.prototype.erpapi="http://api.91ygj.net"
 
 //用户的登录令牌
 var token="773957bbc5ea45fcad69f1dd11ed1688"

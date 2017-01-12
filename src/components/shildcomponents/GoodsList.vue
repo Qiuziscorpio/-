@@ -1,16 +1,8 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-<<<<<<< HEAD
         <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in searchdata">
           <div class="panel">           
-=======
-    <!--:to="{ path:data.routername+'/'+data.Id}"-->
-
-
-       <router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">
-          <div class="panel">                 
->>>>>>> 5978633f641c974803c34f28882280dd47814514
             <div class="panel-img">
               <img :src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-radius">
@@ -32,14 +24,8 @@
                 ¥ {{data.Price}}
               </div>          
             </div>
-<<<<<<< HEAD
           </div>         
       </router-link>
-=======
-          </div>
-         </div>
-   </router-link>
->>>>>>> 5978633f641c974803c34f28882280dd47814514
   </div>
 </div>
 </template>

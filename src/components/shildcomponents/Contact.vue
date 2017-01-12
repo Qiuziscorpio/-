@@ -18,7 +18,7 @@
         </div>
     </div>
     <div class="panel-C-content">
-        <a class="contact" href="tel://15521293240">         
+        <a class="contact" :href="'tel://'+contact.Phone">         
           <i class="icon iconfont icon-dianhua"></i> 联系商家
         </a>
         <router-link :to="{name:contact.routername,params:{id:contact.Id}}"tag="div" class="shop" v-if="contact.routername==='supplierdetail'">
