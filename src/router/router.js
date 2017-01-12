@@ -35,8 +35,7 @@ export default [
     //商品列表页详情
     { 
         path:'/detail/:id', 
-        component:detail, 
-        name:'detail'
+        component:detail
     },
     //企业列表页详情
     {

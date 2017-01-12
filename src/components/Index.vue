@@ -125,7 +125,7 @@ export default {
             _sel.suppliersdata=response.data.data.Suppliers
             _sel.suppliersdata.map(function(item){
                 item.labelico ="ren";
-                item.routername ="supplierdetaillist";
+                item.routername ="supplierdetail";
             })
 
        }, (response) => {

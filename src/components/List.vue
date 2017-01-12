@@ -4,7 +4,6 @@
       <!--搜索条-->
       <searchbar :placeholder="value"></searchbar>
       <goodslist :datalist="productdata"></goodslist>
-      谁做的饭
     </div> 
   </div>
 </template>
@@ -31,12 +30,11 @@ export default {
     let listid=_sel.$route.params.id
     let listapi=_sel.$route.params.type
     let token=localStorage.getItem("token")
-
     //请求列表数据
     if(listapi){
         // 普通商品
         if(listapi==="Product"){
-            _sel.$http.get(this.api+'/Product/List',{Token:"12344",Kind:listid}).then((response) => {
+            _sel.$http.get(this.api+'/'+ listapi+'/List/'+listapi+'?token='+token+'&kind='+listid).then((response) => {   
                 // 普通商品           
                 if(listid==="1"){
                   _sel.productdata=response.body.data
@@ -67,8 +65,7 @@ export default {
         }
         // 供应商列表
         if(listapi==="Supplier"){
-          console.log(this.api+listapi+'/List')
-            _sel.$http.get(this.api+'/'+listapi+'/List',{Token:token}).then((response) => {    
+             _sel.$http.get(this.api+'/'+ listapi+'/List/?token='+token).then((response) => {     
                 _sel.productdata=response.body.data    
                 _sel.productdata.map(function(item){
                     item.labelico ="ren";

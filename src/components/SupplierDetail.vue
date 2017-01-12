@@ -55,12 +55,11 @@ export default {
   },
   mounted(){
         let _sel=this
-       // let apiid=_sel.$route.params.id
+        let dataid=_sel.$route.params.id
         //模拟数据
-        let apiid="123"
         let token=localStorage.getItem("token")
         // 请求详情页数据
-        _sel.$http.get(this.api+'/Supplier/Info/'+apiid,{Token:token}).then((response) => {
+        _sel.$http.get(this.api+'/Supplier/Info/'+dataid+'?token='+token).then((response) => {  
             //供应商数据
              _sel.contactdata=response.body.data.Supplier
              _sel.contactdata.routername="supplierdetail"

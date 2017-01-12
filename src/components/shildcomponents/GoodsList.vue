@@ -1,10 +1,8 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-    <div class="flex-grid flex-grid3"   v-for="data in searchdata" v-on:click="kk">
-       <!--<router-link  tag="div" class="flex-grid flex-grid3" :to="{name:data.routername,params:{id:data.Id}}"  v-for="data in searchdata">-->
-          <div class="panel">  
-            {{data.routername}}              
+        <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in searchdata">
+          <div class="panel">           
             <div class="panel-img">
               <img :src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-radius">
@@ -26,9 +24,8 @@
                 ¥ {{data.Price}}
               </div>          
             </div>
-          </div>
-         </div>
-   <!-- </router-link>-->
+          </div>         
+      </router-link>
   </div>
 </div>
 </template>
@@ -51,10 +48,7 @@ export default {
     keydata:function(val){  
           let _sel=this   
           _sel.key=val        
-    },  
-    kk:function(){
-       this.$router.push({ name: 'detail', params: { id: 'a0d8e00b-f0bd-441c-8574-9bb69ca8beee' }})
-    } 			
+    }			
   },  
   computed: {
       //关键字筛选
@@ -77,6 +71,7 @@ export default {
   },
   mounted() {
     this.$root.$on('key',this.keydata)	
+    console.log("重新加载了")
   }
 }
 </script>
