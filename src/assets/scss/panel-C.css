@@ -5,7 +5,7 @@ html, body, div, img, p, ul, li {
 
 html, body {
   font-size: 16px;
-  font-family: "微软雅黑";
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
   min-width: 320px;
   height: 100%; }
 
@@ -38,6 +38,12 @@ a {
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
 
 .bg-yellow {
   background: #ffb71b; }
@@ -77,21 +83,22 @@ a {
     -webkit-transform-origin: 0 0;
     border-bottom: 0.03125rem solid #efefef; }
   .pane-C .panel-C-head .img {
-    flex: 0 0 20%; }
+    flex: 0 0 20%;
+    margin-right: 4%; }
     .pane-C .panel-C-head .img img {
       width: 100%;
       max-width: 100%; }
   .pane-C .panel-C-head .content {
     flex: 1;
-    font-size: 0.9375rem;
+    font-size: 1.0625rem;
     color: #565656; }
     .pane-C .panel-C-head .content .site {
       margin-top: 0.3125rem;
       display: flex;
-      font-size: 0.75rem;
+      font-size: 0.875rem;
       color: #8c8c8c; }
       .pane-C .panel-C-head .content .site .label {
-        flex: 0 0 10%; }
+        flex: 0 0 14%; }
 .pane-C .panel-C-content {
   display: flex;
   text-align: center;
@@ -112,7 +119,7 @@ a {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box; }
     .pane-C .panel-C-content .contact i {
-      font-size: 1.09375rem;
+      font-size: 1.25rem;
       color: #ffb71b; }
   .pane-C .panel-C-content .shop {
     padding: 0.6875rem;

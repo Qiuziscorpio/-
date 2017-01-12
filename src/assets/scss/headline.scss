@@ -7,7 +7,7 @@
     justify-content:space-between;
     padding: px2rem(22px);
     .tit{
-          @include fc(34px,$theme)
+          @include fc(34px,$theme);
         i{
           font-size:px2rem(40px)
         }

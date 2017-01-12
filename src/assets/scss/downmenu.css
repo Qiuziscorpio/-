@@ -69,21 +69,18 @@ a {
 .text-rose {
   color: #e4195b; }
 
-.nav-radius {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #565656;
-  font-size: 0.875rem; }
-  .nav-radius .nav-icon {
-    border-radius: 50%;
-    width: 16vw;
-    height: 16vw;
-    text-align: center;
-    line-height: 18vw;
-    margin-bottom: 0.625rem; }
-    .nav-radius .nav-icon i {
-      font-size: 1.875rem;
-      color: #fff; }
+.downmenubtn {
+  flex: 0 0 20%;
+  background: #ffb71b;
+  font-size: 0.9375rem;
+  color: #fff;
+  padding: 0.5rem 0.71875rem;
+  position: relative; }
+  .downmenubtn .downmenu {
+    position: absolute;
+    top: 0; }
+    .downmenubtn .downmenu li {
+      font-size: 0.9375rem;
+      color: #565656; }
 
-/*# sourceMappingURL=nav.css.map */
+/*# sourceMappingURL=downmenu.css.map */

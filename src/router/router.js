@@ -10,8 +10,6 @@ import documents from '../components/Documents'
 import companydata from '../components/shildcomponents/Companydata'
 
 
-
-
 export default [
 
     //设置入口 重定向index

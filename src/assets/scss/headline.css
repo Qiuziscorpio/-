@@ -1,51 +1,95 @@
-/*
-Error: Invalid CSS after "...fc(30px,$theme)": expected "}", was "i{"
-        on line 11 of /Users/qiuzi/-/src/assets/scss/headline.scss
+@charset "UTF-8";
+html, body, div, img, p, ul, li {
+  margin: 0;
+  padding: 0; }
 
-6:     display: flex;
-7:     justify-content:space-between;
-8:     padding: px2rem(22px);
-9:     .tit{
-10:           @include fc(30px,$theme)
-11:         i{
-12:           font-size:px2rem(35px)
-13:         }
-14:     }
-15:     .more{
-16:         @include fc(24px,#8c8c8c)
+html, body {
+  font-size: 16px;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  min-width: 320px;
+  height: 100%; }
 
-Backtrace:
-/Users/qiuzi/-/src/assets/scss/headline.scss:11
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1207:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1137:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:1132:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:667:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:735:in `declaration_or_ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:685:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:666:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:658:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:684:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:677:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:125:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/scss/parser.rb:41:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:406:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:381:in `_render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/engine.rb:298:in `render_with_sourcemap'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:492:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:473:in `on_file_changed'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/lib/sass/plugin/compiler.rb:331:in `block in watch'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:252:in `on_change'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/listener.rb:290:in `block in initialize_adapter'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `call'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapters/polling.rb:48:in `poll_changed_directories'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.4.23/vendor/listen/lib/listen/adapter.rb:299:in `block in start_poller'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Error: Invalid CSS after \"...fc(30px,$theme)\": expected \"}\", was \"i{\"\A         on line 11 of /Users/qiuzi/-/src/assets/scss/headline.scss\A \A 6:     display: flex;\A 7:     justify-content:space-between;\A 8:     padding: px2rem(22px);\A 9:     .tit{\A 10:           @include fc(30px,$theme)\A 11:         i{\A 12:           font-size:px2rem(35px)\A 13:         }\A 14:     }\A 15:     .more{\A 16:         @include fc(24px,#8c8c8c)"; }
+ul li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: #565656; }
+
+.flex-row {
+  display: -webkit-flex;
+  display: flex; }
+  .flex-row.xs {
+    margin: 0 0.34375rem;
+    flex-wrap: wrap; }
+
+.flex-grid {
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1; }
+  .flex-grid.flex-grid3 {
+    flex: 0 0 33.333%;
+    -webkit-flex: 0 0 33.333%;
+    -ms-flex: 0 0 33.333%; }
+
+.verticalheight {
+  height: 100vh;
+  background: #fafafa;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.bg-yellow {
+  background: #ffb71b; }
+
+.bg-blue {
+  background: #0ac7fd; }
+
+.bg-green {
+  background: #74ce3b; }
+
+.bg-rose {
+  background: #e4195b; }
+
+.text-yellow {
+  color: #ffb71b; }
+
+.text-blue {
+  color: #0ac7fd; }
+
+.text-green {
+  color: #74ce3b; }
+
+.text-rose {
+  color: #e4195b; }
+
+.headline {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6875rem; }
+  .headline .tit {
+    font-size: 1.0625rem;
+    color: #565656; }
+    .headline .tit i {
+      font-size: 1.25rem; }
+  .headline .more {
+    font-size: 0.875rem;
+    color: #8c8c8c; }
+  .headline:after {
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-transform: scaleY(0.5);
+    -webkit-transform-origin: 0 0;
+    border-top: 0.03125rem solid #efefef; }
+
+/*# sourceMappingURL=headline.css.map */

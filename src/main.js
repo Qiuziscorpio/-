@@ -6,10 +6,12 @@ import Router from 'vue-router'
 import RouterMap from './router/router'
 import Resource from 'vue-resource'
 import Mintui from 'mint-ui';
+import { Lazyload } from 'mint-ui';
 
 Vue.use(Router)
 Vue.use(Resource)
 Vue.use(Mintui)
+Vue.use(Lazyload)
 
 const router = new Router({
   mode: 'history',

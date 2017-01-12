@@ -2,7 +2,7 @@
 <div>
   <mt-swipe :auto="4000">
     <mt-swipe-item v-for="data in shufflingdata">
-      <img v-bind:src="data.CoverImg" />
+      <img  v-lazy="data.CoverImg"/>
     </mt-swipe-item>
   </mt-swipe>
 </div>

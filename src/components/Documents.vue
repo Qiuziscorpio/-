@@ -1,11 +1,9 @@
 <template>
   <div class="verticalheight">
+    <!--日期控件-->
+    <datetpicker></datetpicker>    
     <!--搜索-->
      <searchbar :placeholder="value"></searchbar>
-    <!--日期控件-->
-    <div>
-      
-    <div>  
     <!--单据列表-->  
     <documentslist :documents="documentsdata"></documentslist>
   </div>
@@ -14,6 +12,8 @@
 <script>
 //搜索条
 import searchbar from 'components/shildcomponents/Searchbar.vue'
+//日期控件
+import datetpicker from 'components/shildcomponents/Datepicker.vue'
 //外部单据
 import documentslist from 'components/shildcomponents/Documentslist.vue'
 //单据列表
@@ -21,6 +21,7 @@ export default {
   name: 'search',
   components:{
     searchbar,
+    datetpicker,
     documentslist
   },  
   data () {

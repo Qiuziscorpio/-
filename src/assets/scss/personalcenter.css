@@ -5,7 +5,7 @@ html, body, div, img, p, ul, li {
 
 html, body {
   font-size: 16px;
-  font-family: "微软雅黑";
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
   min-width: 320px;
   height: 100%; }
 
@@ -39,6 +39,12 @@ a {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box; }
 
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
 .bg-yellow {
   background: #ffb71b; }
 
@@ -68,7 +74,7 @@ a {
   display: flex;
   align-items: center;
   padding: 0.78125rem;
-  font-size: 26px;
+  font-size: 30px;
   background: #fff; }
   .item .tit {
     flex: 0 0 95%;
@@ -109,7 +115,7 @@ a {
   .item .userinfor {
     flex: 1; }
     .item .userinfor .name {
-      font-size: 1.125rem;
+      font-size: 1.25rem;
       color: #565656; }
 
 /*# sourceMappingURL=personalcenter.css.map */
