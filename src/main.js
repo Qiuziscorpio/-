@@ -22,10 +22,16 @@ const router = new Router({
 Vue.prototype.api="http://api.91ygj.net/WeChatMall"
 // erp接口
 Vue.prototype.erpapi="http://api.91ygj.net"
+Vue.http.options.emulateJSON = true
 
 //用户的登录令牌
 var token="773957bbc5ea45fcad69f1dd11ed1688"
+//用户的信息
+var username="测试君"
+var userpicture="http://img5.imgtn.bdimg.com/it/u=2173640118,1888901789&fm=21&gp=0.jpg"
 localStorage.setItem("token",token)
+localStorage.setItem("username",username)
+localStorage.setItem("userpicture",userpicture)
 
 /* eslint-disable no-new */
 new Vue({ // eslint-disable-line

@@ -28,8 +28,6 @@
     </mt-datetime-picker>    
 </div>
 </template>
-
-
 <script>
 
   import { DatetimePicker } from 'mint-ui';

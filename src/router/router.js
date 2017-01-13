@@ -8,6 +8,7 @@ import personalcenter from '../components/Personalcenter'
 import about from '../components/About'
 import documents from '../components/Documents'
 import companydata from '../components/shildcomponents/Companydata'
+import store from '../components/store'
 
 
 export default [
@@ -64,6 +65,12 @@ export default [
         component:personalcenter, 
         name:'personalcenter'
     }, 
+    //收藏
+    {
+        path:'/store/type/:id',
+        component:store,
+        name:'store'
+    },
     //外部单据
     { 
         path:'/documents', 

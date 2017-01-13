@@ -58,12 +58,14 @@ export default {
         let dataid=_sel.$route.params.id      
         let token=localStorage.getItem("token")
         // 请求详情页数据
+        console.log(this.api+'/Supplier/Info/'+dataid+'?token='+token)
         _sel.$http.get(this.api+'/Supplier/Info/'+dataid+'?token='+token).then((response) => {  
             //供应商数据
              _sel.contactdata=response.body.data.Supplier
              _sel.contactdata.routername="supplierdetail" 
              _sel.tabdata[3].tabid=dataid
-             console.log(_sel.tabdata[3])  
+             _sel.contactdata.IsFav=response.body.data.IsFav
+             
         }, (response) => {
              console.log('出错啦')
         })

@@ -53,7 +53,7 @@ export default {
       }]         
     }
   },
-  methods:{   
+  methods:{      
     get:function(_sel,dataid){
         let token=localStorage.getItem("token")
         // 请求详情页数据         
@@ -62,7 +62,7 @@ export default {
             _sel.shufflingdata=response.body.data.ProductImgs              
             //商品信息
             _sel.goodsmessagedata=response.body.data.Product
-            _sel.goodsmessagedata.IsFav=response.body.data.IsFav           
+            _sel.goodsmessagedata.IsFav=response.body.data.IsFav         
             _sel.descriptiondata=JSON.parse(response.body.data.Product.Description)
             _sel.promosdata=response.body.data.Product.Promos   
             _sel.supplierdata=response.body.data.Supplier         
@@ -73,8 +73,6 @@ export default {
             })              
             //供应商数据
             _sel.contactdata=response.body.data.Supplier
-            _sel.contactdata.routername="supplierdetail"
-            console.log("请求成功啦")
         }, (response) => {
             console.log('出错啦')
         })      

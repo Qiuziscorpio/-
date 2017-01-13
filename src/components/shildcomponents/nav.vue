@@ -2,7 +2,7 @@
   <div>
     <div class="flex-row">
       <div class="flex-grid">
-        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+        <router-link :to="{name:'list',params:{type:'Product',id:'1'}}" tag="div" class="nav-radius">
           <div class="nav-icon bg-yellow">
             <i class="icon iconfont icon-xuanshangpin"></i>
           </div> 
@@ -10,7 +10,7 @@
         </router-link>
       </div>
       <div class="flex-grid">
-        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+        <router-link :to="{name:'list',params:{type:'Product',id:'2'}}" tag="div" class="nav-radius">
           <div class="nav-icon bg-blue">
            <i class="icon iconfont icon-icon111"></i>
           </div> 
@@ -18,7 +18,7 @@
         </router-link>
       </div>
       <div class="flex-grid">
-        <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+        <router-link :to="{name:'list',params:{type:'Product',id:'3'}}" tag="div" class="nav-radius">
           <div class="nav-icon bg-rose">
             <i class="icon iconfont icon-lipinicon"></i>
           </div> 
@@ -26,7 +26,7 @@
         </router-link>
       </div>
       <div class="flex-grid">
-          <router-link :to="{ name: 'search' }" tag="div" class="nav-radius">
+          <router-link :to="{name:'list',params:{type:'Supplier',id:'0'}}" tag="div" class="nav-radius">
             <div class="nav-icon bg-green">
               <i class="icon iconfont icon-shangjia"></i>
             </div> 

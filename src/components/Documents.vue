@@ -5,7 +5,7 @@
     <!--搜索-->
      <searchbar :placeholder="value"></searchbar>
     <!--单据列表-->  
-    <documentslist :documents="documentsdata"></documentslist>
+    <documentslist :documents="documentsdata" :msg="msgdata"></documentslist>
   </div>
 </template>
 
@@ -28,24 +28,22 @@ export default {
     return {
       value: '请输入关键字',
       documentsdata:{},
-      msgdata:""
+      msgdata:{}
     }
   },
   mounted(){
     let _sel=this
     let token=localStorage.getItem("token")
-      _sel.$http({
-        url: 'http://api.91ygj.net/EnterpriseOrder/MyOrders',
-        method: 'POST',
-        headers: {'content-type': 'application/x-www-form-urlencoded'},
-        data:{
-          token:token,
-          kind: "30,31,32,33,34,35,36,37,38,39"
-        }
-      }).then(function(response) {
-          console.log(response.data)
-      }, function(response) {
-      });
+    _sel.$http.post(this.erpapi+'/EnterpriseOrder/MyOrders',
+        {"token":token,"kind":"30,31,32,33,34,35,36,37,38,39"}
+    ).then((response) => {
+        _sel.documentsdata=response.data.data
+        response.data.data.map(function(obj,index){
+          return  _sel.msgdata=JSON.parse(obj.MsgData)
+        })    
+    }, (response) => {
+        console.log("出错了")
+    })
   }
 }
 </script>

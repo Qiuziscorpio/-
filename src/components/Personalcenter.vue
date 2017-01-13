@@ -1,40 +1,38 @@
 <template>
   <div class="verticalheight">
     <div class="item">
-      <div class="portrait"> 
-          <img src="http://img.sccnn.com/bimg/339/01210.jpg">
-      </div>
+      <div class="portrait"> <img v-bind:src="user.picture"></div>
       <div class="userinfor">
         <div class="name">
-          陈大选
+          {{user.name}}
         </div>
       </div>
     </div>    
-    <div class="item distancetop">
+    <router-link class="item distancetop" :to="{name:'store',params:{type:'Product',id:'store'}}" tag="div" >
       <div class="tit"> 
         <i class="icon iconfont icon-xuanshangpin"></i>
         商品收藏
       </div>
       <div class="open">
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-you"></i>
       </div>
-    </div>
-    <div class="item">
-      <div class="tit"> 
+    </router-link>
+     <router-link class="item"  :to="{name:'store',params:{type:'Supplier',id:'store'}}" tag="div" > 
+      <div class="tit" > 
         <i class="icon iconfont icon-shangjia"></i>
         店铺收藏
       </div>
       <div class="open">
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-you"></i>
       </div>
-    </div>    
+    </router-link>   
     <router-link class="item distancetop"  :to="{name:'documents'}" tag="div" > 
       <div class="tit"> 
         <i class="icon iconfont icon-waibudanju"></i>
         外部单据
       </div>
       <div class="open">
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-you"></i>
       </div>
     </router-link>        
      <router-link class="item distancetop" :to="{name: 'about'}" tag="div">
@@ -43,7 +41,7 @@
         关于蚁管家
       </div>
       <div class="open">
-        <i class="icon iconfont icon-shangjia"></i>
+        <i class="icon iconfont icon-you"></i>
       </div>
     </router-lin>    
   </div>
@@ -54,8 +52,19 @@ export default {
   name: 'Personalcenter',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+       user:{
+         name:"",
+         picture:""
+       }
     }
+  },
+  mounted(){
+      let _sel=this
+      //获取用户信息
+      let username=localStorage.getItem("username")
+      let userpicture=localStorage.getItem("userpicture")
+      _sel.user.name=username
+      _sel.user.picture=userpicture
   }
 }
 </script>
