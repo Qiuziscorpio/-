@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-      <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in searchdata" v-if="!data.store">
+      <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in searchdata" v-if="state.hideshade">
           <div class="panel">           
             <div class="panel-img">
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
@@ -26,11 +26,12 @@
             </div>
           </div>   
       </router-link>
-      <div class="flex-grid flex-grid3 shade"  v-for="data in searchdata" v-if="data.store=='store'">
+      <div class="flex-grid flex-grid3 shade"  v-for="data in searchdata" v-if="state.showshade" v-on:click="storeselected(data.Id,data.selecte,data.uncheck,$event)">
           <div class="panel">           
             <div class="panel-img">
+              {{data.selecte}}  {{data.uncheck}}
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
-              <div class="panel-shade"> </div>
+              <div class="panel-shade" data-shade="true"> </div>
               <div class="panel-radius">
                 <div class="panel-radius-icon bg-blue" v-if="data.IsNew===true">
                   <i class="icon iconfont icon-xinpin1"></i>
@@ -67,14 +68,54 @@ export default {
     return {
       key:"",
       showlist:[],
-      itemlist:[]
+      itemlist:[],
+      stateselected:{
+          selecte:false,
+          uncheck:true
+      },
+      state:{
+           showshade:false,
+           hideshade:true
+      }
     }
   },
   methods: {    
     keydata:function(val){  
           let _sel=this   
           _sel.key=val        
-    }			
+    },
+
+    //显示 隐藏    删除收藏模块
+    stateshade:function(show,hide){  
+          let _sel=this   
+          _sel.state.showshade=show
+          _sel.state.hideshade=hide  
+          if(show===true){           
+            _sel.searchdata.map(function(item){
+                item.selecte=false
+                item.uncheck=true
+            })
+          }      
+    },
+    //单个收藏模块    选中 未选中    
+    storeselected:function(id,selecte,uncheck,event){
+         // 选中
+         if(event.srcElement.dataset.shade){
+            if(event.target.style.display=" "){
+                event.target.style.display="none"              
+                this.$root.$emit('selected',id,true)
+                return
+            }
+            return
+         }    
+         //未选中  
+         if(typeof (event.srcElement.dataset.shade) == "undefined"){
+             event.srcElement.nextElementSibling.style.display="block"
+             this.$root.$emit('selected',id,false)
+             return
+         }
+
+    }    			
   },  
   computed: {
       //关键字筛选
@@ -97,6 +138,7 @@ export default {
   },
   mounted() {
     this.$root.$on('key',this.keydata)	
+    this.$root.$on('shade',this.stateshade)	
     console.log("重新加载了")
   }
 }

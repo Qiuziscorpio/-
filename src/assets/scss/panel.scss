@@ -42,11 +42,12 @@
     position: relative;
     .panel-shade{
         position: absolute;
+        display:block;
         width: 100%;
         height: 100%;
         top:0;
         left: 0;
-        background: rgba(25,255,255, 0.2);
+        background: rgba(10,199,253, 0.2);
         z-index: 999;    
     }
 }

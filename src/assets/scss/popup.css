@@ -1,0 +1,213 @@
+@charset "UTF-8";
+html, body, div, img, p, ul, li {
+  margin: 0;
+  padding: 0; }
+
+html, body {
+  font-size: 16px;
+  font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
+  min-width: 320px;
+  height: 100%; }
+
+ul li {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: #565656; }
+
+.flex-row {
+  display: -webkit-flex;
+  display: flex; }
+  .flex-row.xs {
+    margin: 0 0.34375rem;
+    flex-wrap: wrap; }
+
+.flex-grid {
+  flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1; }
+  .flex-grid.flex-grid3 {
+    flex: 0 0 33.333%;
+    -webkit-flex: 0 0 33.333%;
+    -ms-flex: 0 0 33.333%; }
+
+.verticalheight {
+  height: 100vh;
+  background: #fafafa;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+.show {
+  display: block; }
+
+.hide {
+  display: none; }
+
+.bg-yellow {
+  background: #ffb71b; }
+
+.bg-blue {
+  background: #0ac7fd; }
+
+.bg-green {
+  background: #74ce3b; }
+
+.bg-rose {
+  background: #e4195b; }
+
+.text-yellow {
+  color: #ffb71b; }
+
+.text-blue {
+  color: #0ac7fd; }
+
+.text-green {
+  color: #74ce3b; }
+
+.text-rose {
+  color: #e4195b; }
+
+.mint-msgbox {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  background-color: #fff;
+  width: 85%;
+  border-radius: 3px;
+  font-size: 16px;
+  -webkit-user-select: none;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transition: .2s;
+  transition: .2s; }
+
+.mint-msgbox-header {
+  padding: 15px 0 0; }
+
+.mint-msgbox-content {
+  padding: 10px 20px 15px;
+  border-bottom: 1px solid #ddd;
+  min-height: 36px;
+  position: relative; }
+
+.mint-msgbox-input {
+  padding-top: 15px; }
+
+.mint-msgbox-input input {
+  border: 1px solid #dedede;
+  border-radius: 5px;
+  padding: 4px 5px;
+  width: 100%;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none; }
+
+.mint-msgbox-input input.invalid {
+  border-color: #ff4949; }
+
+.mint-msgbox-input input.invalid:focus {
+  border-color: #ff4949; }
+
+.mint-msgbox-errormsg {
+  color: red;
+  font-size: 12px;
+  min-height: 18px;
+  margin-top: 2px; }
+
+.mint-msgbox-title {
+  text-align: center;
+  padding-left: 0;
+  margin-bottom: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #333; }
+
+.mint-msgbox-message {
+  color: #999;
+  margin: 0;
+  text-align: center;
+  line-height: 36px; }
+
+.mint-msgbox-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 40px;
+  line-height: 40px; }
+
+.mint-msgbox-btn {
+  line-height: 35px;
+  display: block;
+  background-color: #fff;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 0;
+  border: 0; }
+
+.mint-msgbox-btn:focus {
+  outline: none; }
+
+.mint-msgbox-btn:active {
+  background-color: #fff; }
+
+.mint-msgbox-cancel {
+  width: 50%;
+  border-right: 1px solid #ddd; }
+
+.mint-msgbox-cancel:active {
+  color: #000; }
+
+.mint-msgbox-confirm {
+  color: #26a2ff;
+  width: 50%; }
+
+.mint-msgbox-confirm:active {
+  color: #26a2ff; }
+
+.msgbox-bounce-enter {
+  opacity: 0;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(0.7);
+  transform: translate3d(-50%, -50%, 0) scale(0.7); }
+
+.msgbox-bounce-leave-active {
+  opacity: 0;
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(0.9);
+  transform: translate3d(-50%, -50%, 0) scale(0.9); }
+
+.v-modal-enter {
+  -webkit-animation: v-modal-in .2s ease;
+  animation: v-modal-in 0.2s ease; }
+
+.v-modal-leave {
+  -webkit-animation: v-modal-out .2s ease forwards;
+  animation: v-modal-out 0.2s ease forwards; }
+
+@-webkit-keyframes v-modal-in {
+  0% {
+    opacity: 0; } }
+@keyframes v-modal-in {
+  0% {
+    opacity: 0; } }
+@-webkit-keyframes v-modal-out {
+  to {
+    opacity: 0; } }
+@keyframes v-modal-out {
+  to {
+    opacity: 0; } }
+.v-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background: #000; }
+
+/*# sourceMappingURL=popup.css.map */

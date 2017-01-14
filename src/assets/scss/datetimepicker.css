@@ -71,6 +71,7 @@ a {
 
 .datetimepicker {
   display: flex;
+  display: -webkit-flex;
   background: #fff;
   border-block-end: 0.03125rem solid #dcdcdc; }
   .datetimepicker placeholder {
@@ -81,7 +82,7 @@ a {
     color: #8c8c8c;
     font-size: 0.9375rem; }
   .datetimepicker .start, .datetimepicker .end {
-    flex: 1;
+    width: 45%;
     padding: 0.6875rem;
     border: none;
     -webkit-appearance: none;

@@ -67,7 +67,7 @@ export default [
     }, 
     //收藏
     {
-        path:'/store/type/:id',
+        path:'/store/:type/:id',
         component:store,
         name:'store'
     },
