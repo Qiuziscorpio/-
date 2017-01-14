@@ -3,7 +3,7 @@ html,body,div,img,p,ul,li {
     margin: 0;
     padding: 0;
 }
-html ,body{
+html ,body,#app{
     font-size: 16px;
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;
     min-width: 320px;
@@ -70,6 +70,15 @@ $rose:#e4195b;
         -ms-flex: 0 0 33.333%;      
     }
 }
+.flex-vertical{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .flex-vertical-content{
+        flex: 1;
+        overflow: scroll;
+    }
+}
 .verticalheight{
     height:100vh;
     background: #fafafa;
@@ -77,6 +86,7 @@ $rose:#e4195b;
     -moz-box-sizing: border-box; 
     -webkit-box-sizing: border-box;    
 }
+
 .show{
     display: block;
 }

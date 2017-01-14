@@ -127,7 +127,6 @@ export default {
                 item.labelico ="ren";
                 item.routername ="supplierdetail";
             })
-
        }, (response) => {
             console.log('出错啦')
        })
