@@ -43,14 +43,12 @@ export default {
                         item.routername ="detail";
                     })                    
                     _sel.value="搜索新品"
-                    console.log("请求的是新品")
                 }
                 if(listid==="3"){                
                     _sel.productdata=response.body.data
                     _sel.productdata.map(function(item){
                         item.routername ="detail";
                     })                    
-                    console.log("请求的是促销品")
                      _sel.value="搜索促销品"
                 }                                  
             },(response) => {
@@ -67,7 +65,6 @@ export default {
     let _sel=this
     let listid=_sel.$route.params.id
     let listapi=_sel.$route.params.type
-    console.log(_sel.$route.params.type)
 
     let token=localStorage.getItem("token")
     //请求列表数据
@@ -89,7 +86,6 @@ export default {
                         item.routername ="detail";
                     })                    
                     _sel.value="搜索新品"
-                    console.log("请求的是新品")
                 }
                 if(listid==="3"){                
                     _sel.productdata=response.body.data

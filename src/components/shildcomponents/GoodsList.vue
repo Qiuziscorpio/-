@@ -29,7 +29,6 @@
       <div class="flex-grid flex-grid3 shade"  v-for="data in searchdata" v-if="state.showshade" v-on:click="storeselected(data.Id,data.selecte,data.uncheck,$event)">
           <div class="panel">           
             <div class="panel-img">
-              {{data.selecte}}  {{data.uncheck}}
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-shade" data-shade="true"> </div>
               <div class="panel-radius">
@@ -139,7 +138,6 @@ export default {
   mounted() {
     this.$root.$on('key',this.keydata)	
     this.$root.$on('shade',this.stateshade)	
-    console.log("重新加载了")
   }
 }
 </script>

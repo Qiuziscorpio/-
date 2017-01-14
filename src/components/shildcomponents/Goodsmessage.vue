@@ -66,7 +66,6 @@
           _sel.$http.get(this.api+'/Product/'+type+'?token='+token+'&productId='+storeid).then((response) => {   
               this.is= isfav
               _sel.goodsmessagedata.IsFav=this.is    
-              console.log("操作成功了")
           },(response) => {
               console.log('出错啦')
           })
@@ -83,7 +82,6 @@
       }       
     },    
     mounted() {
-      console.log("再次进入了")
     }  
   }
 </script>

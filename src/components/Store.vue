@@ -31,21 +31,30 @@ export default {
   methods:{   
      //是否确定 删除已选收藏  
       delete:function(val){
-
+        let _sel=this
         let storeid= val.join(",")
-        console.log(storeid)
+        let token=localStorage.getItem("token")  
+        let listapi=_sel.$route.params.type
 
-        MessageBox.confirm('确定删除?').then(action => {
-          let token=localStorage.getItem("token")
-          // _sel.$http.get(this.api+'/Product/CancelFavor?token='+token+'&productId='+storeid).then((response) => {   
-
-              
-          //     console.log("操作成功了")
-          // },(response) => {
-          //     console.log('出错啦')
-          // })
-
-
+        MessageBox.confirm('确定删除?').then(action => {   
+          // 删除商品收藏  
+          if(listapi==="Product"){
+              _sel.$http.get(this.api+'/Product/CancelFavor?token='+token+'&productId='+storeid).then((response) => {   
+                  //删除收藏成功 刷新当前页
+                  location.reload() 
+              },(response) => {
+                  console.log('出错啦')
+              })
+          }
+           // 删除商家收藏 
+          if(listapi==="Supplier"){
+              _sel.$http.get(this.api+'/Supplier/CancelFavor?token='+token+'&supplierId='+storeid).then((response) => {   
+                  //删除收藏成功 刷新当前页
+                  location.reload() 
+              },(response) => {
+                  console.log('出错啦')
+              })
+          }            
         });        
       }
   },
