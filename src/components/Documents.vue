@@ -5,7 +5,7 @@
     <!--搜索-->
      <searchbar :placeholder="value"></searchbar>
     <!--单据列表-->  
-    <documentslist :documents="documentsdata" :msg="msgdata"></documentslist>
+    <documentslist :documents="searchdata" :msg="msgdata"></documentslist>
   </div>
 </template>
 
@@ -28,7 +28,27 @@ export default {
     return {
       value: '请输入关键字',
       documentsdata:{},
-      msgdata:{}
+      msgdata:{},
+      key:"",
+    }
+  },
+  computed:{
+      //关键字筛选
+      searchdata: function() {
+        let _sel=this  
+        let listid=_sel.$route.params.id
+        let listapi=_sel.$route.params.type
+        let token=localStorage.getItem("token")        
+        if (_sel.key) {
+            //搜索列表单据
+        }
+        return this.documentsdata;
+      } 
+  },
+  methods:{
+    keydata:function(val){  
+          let _sel=this   
+          _sel.key=val        
     }
   },
   mounted(){
@@ -44,6 +64,9 @@ export default {
     }, (response) => {
         console.log("出错了")
     })
+
+    //搜索
+    this.$root.$on('key',this.keydata)
   }
 }
 </script>

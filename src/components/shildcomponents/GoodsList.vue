@@ -1,7 +1,7 @@
 <template>
 <div>
   <div class="flex-row xs"> 
-      <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in searchdata" v-if="state.hideshade">
+      <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in datalist" v-if="state.hideshade">
           <div class="panel">           
             <div class="panel-img">
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
@@ -26,7 +26,7 @@
             </div>
           </div>   
       </router-link>
-      <div class="flex-grid flex-grid3 shade"  v-for="data in searchdata" v-if="state.showshade" v-on:click="storeselected(data.Id,data.selecte,data.uncheck,$event)">
+      <div class="flex-grid flex-grid3 shade"  v-for="data in datalist" v-if="state.showshade" v-on:click="storeselected(data.Id,data.selecte,data.uncheck,$event)">
           <div class="panel">           
             <div class="panel-img">
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
@@ -65,7 +65,6 @@ export default {
   },
   data () {
     return {
-      key:"",
       showlist:[],
       itemlist:[],
       stateselected:{
@@ -79,11 +78,6 @@ export default {
     }
   },
   methods: {    
-    keydata:function(val){  
-          let _sel=this   
-          _sel.key=val        
-    },
-
     //显示 隐藏    删除收藏模块
     stateshade:function(show,hide){  
           let _sel=this   
@@ -116,28 +110,8 @@ export default {
 
     }    			
   },  
-  computed: {
-      //关键字筛选
-      searchdata: function() {
-        let _sel=this  
-        if (_sel.key) {
-          return _sel.datalist.filter(function(item) {
-            return Object.keys(item).some(function(key) {
-                if(item.Title){
-                    return String(item.Title).indexOf(_sel.key) > -1
-                }
-                if(item.Name){
-                    return String(item.Name).indexOf(_sel.key) > -1
-                }               
-            })
-          })
-        }
-        return this.datalist;
-      }    
-  },
   mounted() {
-    this.$root.$on('key',this.keydata)	
-    this.$root.$on('shade',this.stateshade)	
+    this.$root.$on('shade',this.stateshade)		
   }
 }
 </script>
