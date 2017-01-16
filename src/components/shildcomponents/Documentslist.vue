@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="documents" v-for="data in documents" >        
+      <div class="documents" v-for="data in documents" >    
           <div class="companyname">
            {{msg.Client}}
           </div>

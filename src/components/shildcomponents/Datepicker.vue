@@ -1,11 +1,11 @@
 <template>
 <div>
     <div class="datetimepicker">        
-        <input  placeholder="2016-09-23" v-model="startdet" class="start"  v-on:click="openPicker('picker1')" readonly /> 
+        <input  placeholder="开始时间" v-model="startdet" class="start"  v-on:click="openPicker('picker1')" readonly /> 
         <div class="label">
           ~
         </div>
-        <input  placeholder="2016-09-23" v-model="enddet"  class="end" readonly  v-on:click="openPicker('picker2')" />
+        <input  placeholder="结束时间" v-model="enddet"  class="end" readonly  v-on:click="openPicker('picker2')" />
     </div>
     <mt-datetime-picker
       ref="picker1"
@@ -38,12 +38,30 @@
         this.$refs[picker].open();
       },
       startChange(value) {
-          var date = new Date(value);
-          this.startdet=date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+        var date = new Date(value);
+        this.getMonth = (date.getMonth() + 1);
+        this.getDate = date.getDate();
+        if ((date.getMonth() + 1) < 10) {
+          this.getMonth = '0' + (date.getMonth() + 1)
+        }
+        if (date.getDate() < 10) {
+          this.getDate = '0' + date.getDate()
+        }        
+        this.startdet=date.getFullYear() +'-'+this.getMonth+'-'+this.getDate
+        this.$root.$emit('start',this.startdet)
       },
-       endChange(value) {
-          var date = new Date(value);
-          this.enddet=date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate()
+      endChange(value) {
+        var date = new Date(value);
+        this.getMonth = (date.getMonth() + 1);
+        this.getDate = date.getDate();
+        if ((date.getMonth() + 1) < 10) {
+          this.getMonth = '0' + (date.getMonth() + 1)
+        }
+        if (date.getDate() < 10) {
+          this.getDate = '0' + date.getDate()
+        }        
+        this.enddet=date.getFullYear() +'-'+this.getMonth+'-'+this.getDate
+        this.$root.$emit('end',this.enddet)
       }                
     },
     component:{
@@ -53,8 +71,10 @@
       return {
         startdet:"",
         enddet:"",
-        value4: '2017 11 12',
-        visible4: false
+        value4: '2017 85 2',
+        visible4: false,
+        getMonth:"",
+        getDate:"",
       }
     }
   }

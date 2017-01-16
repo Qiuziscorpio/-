@@ -121,5 +121,92 @@ $rose:#e4195b;
     color: $rose;
 }
 
+//分页
+.mint-loadmore {
+    overflow: hidden
+}
+.mint-loadmore-content.is-dropped {
+    -webkit-transition: .2s;
+    transition: .2s
+}
+.mint-loadmore-top, .mint-loadmore-bottom {
+    text-align: center;
+    height: 50px;
+    line-height: 50px
+}
+.mint-loadmore-top {
+    margin-top: -50px
+}
+.mint-loadmore-bottom {
+    margin-bottom: -50px
+}
+.mint-loadmore-spinner {
+    display: inline-block;
+    margin-right: 5px;
+    vertical-align: middle
+}
+.mint-loadmore-text {
+    vertical-align: middle
+}
 
+.page-loadmore .mint-spinner {
+    display: inline-block;
+    vertical-align: middle;
+}
+.page-loadmore-desc {
+    text-align: center;
+    color: #666;
+    padding-bottom: 5px;
+}
+.page-loadmore-desc:last-of-type {
+    border-bottom: solid 1px #eee;
+}
+.page-loadmore-listitem {
+    height: 50px;
+    line-height: 50px;
+    border-bottom: solid 1px #eee;
+    text-align: center;
+}
+.page-loadmore-listitem:first-child {
+    border-top: solid 1px #eee;
+}
+.page-loadmore-wrapper {
+    overflow: scroll;
+}
+.mint-loadmore-bottom span {
+    display: inline-block;
+    -webkit-transition: .2s linear;
+    transition: .2s linear;
+    vertical-align: middle
+}
+.mint-loadmore-bottom span.is-rotate {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg);
+}
+.mint-spinner-snake {
+  -webkit-animation: mint-spinner-rotate 0.8s infinite linear;
+          animation: mint-spinner-rotate 0.8s infinite linear;
+  border: 4px solid transparent;
+  border-radius: 50%;
+}
+@-webkit-keyframes mint-spinner-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
+@keyframes mint-spinner-rotate {
+0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+}
+100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+}
+}
 

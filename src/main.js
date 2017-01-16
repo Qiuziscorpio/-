@@ -25,7 +25,7 @@ Vue.prototype.erpapi="http://api.91ygj.net"
 Vue.http.options.emulateJSON = true
 
 //用户的登录令牌
-var token="773957bbc5ea45fcad69f1dd11ed1688"
+var token="31d8f73ea0564547a0b09cf07800d843"
 //用户的信息
 var username="测试君"
 var userpicture="http://img5.imgtn.bdimg.com/it/u=2173640118,1888901789&fm=21&gp=0.jpg"

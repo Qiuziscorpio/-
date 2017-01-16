@@ -13,7 +13,6 @@
                   <i class="icon iconfont icon-cuxiao1"></i>
                 </div>           
               </div>
-            </div>
             <div class="panel-content">
               <div class="tit" v-if="data.labelico==='ren'">{{data.Name}}</div>
               <div class="tit" v-else>{{data.Title}}</div>          

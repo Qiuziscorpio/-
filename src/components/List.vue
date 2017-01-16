@@ -9,10 +9,10 @@
             <goodslist :datalist="searchdata"></goodslist>
             <!--分页-->
             <div slot="bottom" class="mint-loadmore-bottom">
-            <span v-show="bottomStatus !== 'loading'" :class="{ 'is-rotate': bottomStatus === 'drop' }">↑</span>
-            <span v-show="bottomStatus === 'loading'">
-                <mt-spinner type="snake"></mt-spinner>
-            </span>
+                <span v-show="bottomStatus !== 'loading'" :class="{ 'is-rotate': bottomStatus === 'drop' }">↑</span>
+                <span v-show="bottomStatus === 'loading'">
+                    <mt-spinner type="snake"></mt-spinner>
+                </span>
             </div>            
         </mt-loadmore>
     </div>
@@ -275,5 +275,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+
+
+        
 
 </style>
