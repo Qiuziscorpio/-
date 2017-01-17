@@ -1,9 +1,13 @@
 <template>
 <div>
-  <mt-swipe :auto="4000">
-    <mt-swipe-item v-for="data in shufflingdata">
+
+  <mt-swipe :auto="4000">   
+    <mt-swipe-item v-for="data in lazyimg" v-if="shufflingdata.length=='0'">
+      <img  v-lazy="data.img"/>
+    </mt-swipe-item>        
+    <mt-swipe-item v-for="data in shufflingdata" else>
       <img  v-lazy="data.CoverImg"/>
-    </mt-swipe-item>
+    </mt-swipe-item>    
   </mt-swipe>
 </div>
 </template>
@@ -16,6 +20,13 @@ export default {
   },
   props:{
     shufflingdata:""
+  },
+  data(){
+    return{
+      lazyimg:{
+          img:"lazyimg"
+      }
+    }
   }
 }
 </script>

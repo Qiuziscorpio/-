@@ -32,7 +32,7 @@
              取消收藏
           </span>
         </div>
-        <router-link :to="{name:'supplierdetaillist',params:{id:contact.Id}}"tag="div" class="shop" v-else>
+        <router-link :to="{name:'supplierdetaillist',params:{id:contact.Id}}"tag="a" class="shop" v-else>
           <i class="icon iconfont icon-shangjia text-green"></i> 进入店铺
         </router-link>        
     </div>

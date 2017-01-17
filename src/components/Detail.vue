@@ -56,6 +56,8 @@ export default {
   methods:{      
     get:function(_sel,dataid){
         let token=localStorage.getItem("token")
+
+        console.log('请求的商品信息',this.api+'/Product/Info/'+dataid+'?token='+token)
         // 请求详情页数据         
         _sel.$http.get(this.api+'/Product/Info/'+dataid+'?token='+token).then((response) => {           
             //轮播图数据   
@@ -74,9 +76,7 @@ export default {
             })              
             //供应商数据
             _sel.contactdata=response.body.data.Supplier
-
-             console.log(this.api+'/Product/Info/'+dataid+'?token='+token)
-             console.log( _sel.goodsmessagedata)
+            console.log(response.body.data)
         }, (response) => {
             console.log('出错啦')
         })      
@@ -90,6 +90,7 @@ export default {
   mounted(){
         let apiid=this.$route.params.id
         this.get(this,apiid) 
+        console.log(this.$route.params.id )
   }
 }
 </script>

@@ -14,6 +14,7 @@
     }   
     display:flex;
     display: -webkit-flex;
+    justify-content: center;
     background: #fff;
     border-block-end:px2rem(1px) solid  #dcdcdc;
     .start,.end{
@@ -24,9 +25,10 @@
         font-size: px2rem(30px);               
     } 
     .label{
-       text-align: center;
+       display: flex;
+       justify-content: center;
        flex:0 0 8%;
-       padding:px2rem(22px);
+       line-height: px2rem(100px);
        border-left:px2rem(1px) solid  #dcdcdc;
        border-right:px2rem(1px) solid  #dcdcdc;
        box-sizing: border-box;

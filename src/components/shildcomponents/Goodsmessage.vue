@@ -3,7 +3,7 @@
   <div class="panel-B">
     <div class="panel-B-head"> 
       <div class="tit">
-        <span class="text-rose" v-if="goodsmessagedata.IsNew===false">[促销]</span> {{goodsmessagedata.Title}}
+        <span class="text-rose" v-if="goodsmessagedata.IsPromo===true">[促销]</span> {{goodsmessagedata.Title}}
       </div>
       <div class="label">
         <div class="num" v-if="promosdata!=undefined">
@@ -11,7 +11,7 @@
           <span class="original"> ¥ {{goodsmessagedata.Price}}  </span>
         </div>      
         <div class="num" v-else>
-          <span class="current" :class="{'text-rose':goodsmessagedata.IsNew===false,'text-yellow':goodsmessagedata.IsNew===true}">  ¥ {{goodsmessagedata.Price}} </span>
+          <span class="current text-yellow" :class="{'text-rose':goodsmessagedata.IsPromo===true}">  ¥ {{goodsmessagedata.Price}} </span>
         </div>    
         <i style="opacity: 0;position: absolute;"> {{is}}</i>
         <div class="collect" v-on:click="cancelstore(goodsmessagedata.Id)" v-if="goodsmessagedata.IsFav==true ">

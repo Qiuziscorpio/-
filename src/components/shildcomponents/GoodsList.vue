@@ -1,5 +1,4 @@
 <template>
-<div>
   <div class="flex-row xs"> 
       <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in datalist" v-if="state.hideshade">
           <div class="panel">           
@@ -52,7 +51,6 @@
           </div> 
       </div>
   </div>
-</div>
 </template>
 
 <script>
