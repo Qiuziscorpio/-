@@ -9,6 +9,7 @@ import about from '../components/About'
 import documents from '../components/Documents'
 import companydata from '../components/shildcomponents/Companydata'
 import store from '../components/store'
+import bind from '../components/Bind'
 
 
 export default [
@@ -82,5 +83,11 @@ export default [
         path:'/about', 
         component:about, 
         name:'about'
-    }                    
+    },
+    //绑定 
+    {
+        path:'/user/bind', 
+        component:bind, 
+        name:'bind'
+    }                      
 ]

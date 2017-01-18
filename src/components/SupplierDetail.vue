@@ -21,12 +21,13 @@ export default {
   data () {
     return {
       contactdata:{},
+      dataid:"",
       tabdata:[
         {
           tabname:"supplierdetaillist",
           tabtit:"全部商品",
           tabtype:"Product",
-          tabid:"1",
+          tabid:"0",
           classactive:true
         },
         {
@@ -56,18 +57,22 @@ export default {
   watch:{
       '$route' (to,from) {
           this.tabdata[0].classactive=false
+          if(to.params.type==="Product"){
+             this.$root.$emit('supplierinfo', this.dataid)
+          }
       },
   },  
   mounted(){
       let _sel=this
-      let dataid=_sel.$route.params.id    
+      _sel.dataid=_sel.$route.params.id    
       let token=localStorage.getItem("token")
       // 请求详情页数据
-      _sel.$http.get(this.api+'/Supplier/Info/'+dataid+'?token='+token).then((response) => {  
+      _sel.$http.get(this.api+'/Supplier/Info/'+_sel.dataid+'?token='+token).then((response) => {  
             //供应商数据
             _sel.contactdata=response.body.data.Supplier
             _sel.contactdata.routername="supplierdetail"
-            _sel.tabdata[3].tabid=dataid
+            _sel.tabdata[3].tabid=_sel.dataid
+
             _sel.contactdata.IsFav=response.body.data.IsFav     
       }, (response) => {
             console.log('出错啦')

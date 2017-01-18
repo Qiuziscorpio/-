@@ -4,15 +4,15 @@
     <datetpicker></datetpicker>
     <!--单据列表-->
     <div class="flex-vertical-content" ref="wrapper" :style="{ height: wrapperHeight + 'px' }">
-      <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" ref="loadmore">
+      <mt-loadmore :bottom-method="loadBottom" @bottom-status-change="handleBottomChange" :bottom-all-loaded="allLoaded" :auto-fill="false" ref="loadmore">
         <documentslist :documents="documentsdata" :msg="msgdata"></documentslist>
-          <!--分页-->
-          <div slot="bottom" class="mint-loadmore-bottom">
-            <span v-show="bottomStatus !== 'loading'" :class="{ 'is-rotate': bottomStatus === 'drop' }">↑</span>
-            <span v-show="bottomStatus === 'loading'">
+        <!--分页-->
+        <div slot="bottom" class="mint-loadmore-bottom">
+          <span v-show="bottomStatus !== 'loading'" :class="{ 'is-rotate': bottomStatus === 'drop' }">↑</span>
+          <span v-show="bottomStatus === 'loading'">
                 <mt-spinner type="snake"></mt-spinner>
             </span>
-          </div>       
+        </div>
       </mt-loadmore>
     </div>
   </div>
@@ -26,7 +26,7 @@
   //外部单据
   import documentslist from 'components/shildcomponents/Documentslist.vue'
   //分页 提示
-  import { Loadmore,Indicator  } from 'mint-ui';
+  import { Loadmore, Indicator } from 'mint-ui';
 
   export default {
     name: 'search',
@@ -47,7 +47,7 @@
         wrapperHeight: 0,
         bottomStatus: '',
         allLoaded: false,
-        pages:0,        
+        pages: 1,
       }
     },
     watch: {
@@ -109,34 +109,36 @@
       },
       //分页
       handleBottomChange(status) {
-          this.bottomStatus = status;
+        this.bottomStatus = status;
       },
       loadBottom() {
-          setTimeout(() => {
-              let _sel=this
-              let token=localStorage.getItem("token")
-              this.pages=this.pages+1 
-              //请求单据列表数据
-              _sel.$http.post(this.erpapi + '/EnterpriseOrder/MyOrders',
-                { "token": token, "kind": "30,31,32,33,34,35,36,37,38,39","page":this.pages }
-              ).then((response) => {
-                if (response.data.data != null) {
-                  let listdata = response.data.data.map(function (obj, index) {
-                    return _sel.msgdata = JSON.parse(obj.MsgData)
-                  })
-                  let  list= _sel.documentsdata.concat(listdata)
-                  _sel.documentsdata =list   
-                }
-                if (response.data.data == null) {
-                  
-                    _sel.allLoaded = true;
-                }
-              }, (response) => {
-                console.log("出错了")
+          this.pages = this.pages + 1
+          let _sel = this
+          let token = localStorage.getItem("token")
+
+          //请求单据列表数据
+          _sel.$http.post(this.erpapi + '/EnterpriseOrder/MyOrders',
+            { "token": token, "kind": "30,31,32,33,34,35,36,37,38,39", "page": this.pages }
+          ).then((response) => {
+            if (response.data.data != null) {
+              let listdata = response.data.data.map(function (obj, index) {
+                return _sel.msgdata = JSON.parse(obj.MsgData)
               })
-              this.$refs.loadmore.onBottomLoaded();
-          }, 1500);
-      } 
+              let list = _sel.documentsdata.concat(listdata)
+              _sel.documentsdata = list
+            }
+            if (response.data.data == null) {
+                  Indicator.open('已加载完');
+                  _sel.allLoaded = true;
+                  setTimeout(function () {
+                      Indicator.close();
+                  }, 1000)
+            }
+          }, (response) => {
+            console.log("出错了")
+          })
+          this.$refs.loadmore.onBottomLoaded();
+      }
     },
     mounted() {
       let _sel = this

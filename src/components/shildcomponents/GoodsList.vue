@@ -4,13 +4,13 @@
           <div class="panel">           
             <div class="panel-img">
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
-              <div class="panel-radius">
+              <div class="panel-radius">             
                 <div class="panel-radius-icon bg-blue" v-if="data.IsNew===true">
                   <i class="icon iconfont icon-xinpin1"></i>
                 </div>
                 <div class="panel-radius-icon bg-rose" v-if="data.IsPromo===true">
                   <i class="icon iconfont icon-cuxiao1"></i>
-                </div>           
+                </div>        
               </div>
             <div class="panel-content">
               <div class="tit" v-if="data.labelico==='ren'">{{data.Name}}</div>
@@ -29,7 +29,7 @@
             <div class="panel-img">
               <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
               <div class="panel-shade" data-shade="true"> </div>
-              <div class="panel-radius">
+              <div class="panel-radius">               
                 <div class="panel-radius-icon bg-blue" v-if="data.IsNew===true">
                   <i class="icon iconfont icon-xinpin1"></i>
                 </div>
@@ -81,7 +81,7 @@ export default {
           _sel.state.showshade=show
           _sel.state.hideshade=hide  
           if(show===true){           
-            _sel.searchdata.map(function(item){
+            _sel.datalist.map(function(item){
                 item.selecte=false
                 item.uncheck=true
             })
@@ -104,7 +104,6 @@ export default {
              this.$root.$emit('selected',id,false)
              return
          }
-
     }    			
   },  
   mounted() {

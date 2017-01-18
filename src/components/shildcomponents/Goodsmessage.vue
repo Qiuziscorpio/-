@@ -3,7 +3,9 @@
   <div class="panel-B">
     <div class="panel-B-head"> 
       <div class="tit">
-        <span class="text-rose" v-if="goodsmessagedata.IsPromo===true">[促销]</span> {{goodsmessagedata.Title}}
+        <span class="text-rose" v-if="goodsmessagedata.IsPromo===true">[促销] {{goodsmessagedata.Title}}</span>
+        <span class="text-blue" v-else-if="goodsmessagedata.IsNew===true">[新品] {{goodsmessagedata.Title}}</span> 
+        <span v-else> {{goodsmessagedata.Title}}</span> 
       </div>
       <div class="label">
         <div class="num" v-if="promosdata!=undefined">
@@ -89,5 +91,4 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss"  scoped>
  @import "../../assets/scss/panel-B.scss"; 
-
 </style>
