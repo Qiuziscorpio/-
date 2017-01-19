@@ -14,16 +14,7 @@
     padding: px2rem(22px);
     margin-bottom: px2rem(22px);
     background: #fff;
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        bottom: 0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-bottom:px2rem(4px) solid #efefef;
-    }    
+    @include border-before() ;        
   }
   .search{
      display: flex;
@@ -78,16 +69,7 @@
         @include fc(30px,$theme);
         position: relative;
         padding: px2rem(22px) 0;
-        &:after{
-            width: 100%;
-            content:"";
-            position: absolute;
-            bottom: 0;
-            left:0;
-            -webkit-transform:scaleY(.5);
-            -webkit-transform-origin:0 0;                    
-            border-bottom:px2rem(1px) solid #efefef;
-        }          
+        @include border-before();      
       }
   }
   .downmenu{

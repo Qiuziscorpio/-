@@ -13,7 +13,6 @@
 </template>
 
 <script>
-import "../../assets/scss/shuffing.css"; 
 export default {
   name: 'shuffling',
   components:{
@@ -33,7 +32,7 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style  lang="scss" scoped>
+@import "../../assets/scss/shuffing.scss"; 
 
 </style>

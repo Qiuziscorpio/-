@@ -5,16 +5,7 @@
         display: flex;
         position: relative;
         padding: px2rem(22px);
-        &:after{
-            width: 100%;
-            content:"";
-            position: absolute;
-            bottom: 0;
-            left:0;
-            -webkit-transform:scaleY(.5);
-            -webkit-transform-origin:0 0;                    
-            border-bottom:px2rem(1px) solid #efefef;
-        }        
+        @include border-before();        
         .img{
               flex:0 0 20%;
               margin-right:4%;
@@ -53,19 +44,15 @@
         }         
         .contact{
             flex: 50%;
-            padding: px2rem(22px);
-            box-sizing: border-box;
-            -moz-box-sizing: border-box; 
-            -webkit-box-sizing: border-box;                                    
+            padding: px2rem(22px); 
+            @include  boxsizing();                             
             i{
                @include fc(40px,$yellow); 
             }
         }  
         .shop{
             padding: px2rem(22px);
-            box-sizing: border-box;
-            -moz-box-sizing: border-box; 
-            -webkit-box-sizing: border-box;             
+            @include  boxsizing();             
             flex: 50%;
         }   
     }

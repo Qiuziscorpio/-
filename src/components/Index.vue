@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div>
     <!--个人中心-->
     <user></user>
     <!--搜索-->
@@ -161,7 +161,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" >
+<style lang="scss" scoped>
   @import "../assets/scss/search.scss"; 
   placeholder{
     color: #fff;
@@ -184,8 +184,5 @@
       border: none;
       background: rgba(0, 0, 0, 0)
     }
-  }
-  .index .mint-swipe{
-    height: 46vw;
   }
 </style>

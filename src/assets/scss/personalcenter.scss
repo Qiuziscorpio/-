@@ -19,26 +19,8 @@
             @include fc(40px,#dcdcdc)
         }
     }
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        bottom: 0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-bottom:px2rem(1px) solid #efefef;
-    } 
-    &:before{
-        width: 100%;
-        content:"";
-        position: absolute;
-        top: 0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-top:px2rem(1px) solid #efefef;
-    } 
+    @include  border-before();
+    @include  border-after();
     &.distancetop{
         margin-top: px2rem(24px)
     } 

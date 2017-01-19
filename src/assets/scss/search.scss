@@ -5,9 +5,7 @@
     align-items: center;
     position: relative;    
     padding: px2rem(5px);
-    box-sizing: border-box;
-    -moz-box-sizing: border-box; 
-    -webkit-box-sizing: border-box; 
+    @include boxsizing();
     border-radius:px2rem(10px); 
     .magnify{
         position: absolute;

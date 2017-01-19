@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="detail">
     <!--个人中心-->
     <user></user>    
     <!--图片轮播图-->
@@ -92,14 +92,13 @@ export default {
   mounted(){
         let apiid=this.$route.params.id
         this.get(this,apiid) 
-        console.log(this.$route.params.id )
   }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
-  .mint-swipe{
+ .detail .mint-swipe{
     height: 78vw
   }
 </style>

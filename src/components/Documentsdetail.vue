@@ -111,7 +111,6 @@
         mounted() {
             let _sel = this
             let id = _sel.$route.params.id
-            console.log('详情页', this.erpapi + '/EnterpriseOrder/Orderdetail')
             _sel.$http.get(this.erpapi + '/EnterpriseOrder/Orderdetail?id=' + id).then((response) => {
                 //外部单据详情
                 _sel.detaildata=response.data.data

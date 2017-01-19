@@ -143,7 +143,6 @@
     mounted() {
       let _sel = this
       let token = localStorage.getItem("token")
-      console.log('列表页',this.erpapi + '/EnterpriseOrder/MyOrders')
       _sel.$http.post(this.erpapi + '/EnterpriseOrder/MyOrders',
         { "token": token, "kind": "30,31,32,33,34,35,36,37,38,39" }
       ).then((response) => {
@@ -163,6 +162,6 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-
+<style  lang="scss" scoped>
+@import "../assets/scss/toast.scss"; 
 </style>
