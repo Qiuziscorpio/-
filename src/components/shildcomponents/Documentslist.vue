@@ -1,6 +1,6 @@
 <template>
     <div>
-      <div class="documents" v-for="data in documents" >    
+      <router-link :to="{path:'/documentsdetail/'+data.Id}" class="documents" v-for="data in documents" tag="div">    
           <div class="companyname">
            {{msg.Client}}
           </div>
@@ -26,7 +26,7 @@
                 <i class="icon iconfont icon-tips"></i>  {{msg.SName}}
             </div>
           </div> 
-      </div>                
+      </router-link>                
     </div>
 </template>
 

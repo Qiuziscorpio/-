@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="index">
     <!--个人中心-->
     <user></user>
     <!--搜索-->
@@ -116,7 +116,6 @@
       initWeChat: function () {
         var self = this;
         self.wechat.initWeChatConfig(function (res) {
-          
           self.loadData();    //微信加载完成开始读取数据
         });
       },
@@ -162,7 +161,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss" scoped>
+<style lang="scss" >
   @import "../assets/scss/search.scss"; 
   placeholder{
     color: #fff;
@@ -185,5 +184,8 @@
       border: none;
       background: rgba(0, 0, 0, 0)
     }
+  }
+  .index .mint-swipe{
+    height: 46vw;
   }
 </style>

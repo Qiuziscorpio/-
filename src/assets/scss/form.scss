@@ -1,0 +1,48 @@
+@import "confi.scss";
+  placeholder{
+    color: #8c8c8c;
+  }
+  :-ms-input-placeholder {
+    color: #8c8c8c;
+  }
+  ::-webkit-input-placeholder {
+     color: #8c8c8c;
+  }
+
+.form{
+    padding: px2rem(22px);
+    .form-input{
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        border-radius:px2rem(10px) ;
+        border: px2rem(1px) solid #dcdcdc;
+        .input{
+            border-radius:px2rem(10px) ;
+            padding: px2rem(22px);
+            border: none;
+            flex: 1;
+        }
+        .form-verify{
+            border-top: px2rem(1px) solid #dcdcdc;
+            display: flex;
+            align-items: center;
+            .label{
+                flex: 0 0 30%;
+                @include fc(30px,$blue);
+            }
+        }
+    }
+
+    .form-btn{
+        border-radius:px2rem(10px) ;
+        margin-top:px2rem(22px); 
+        @include fc(36px,#fff);
+        text-align: center;
+        padding: px2rem(22px);
+        background: $yellow;
+        width: 100%;
+        border: px2rem(1px) solid #f49927
+    }
+
+}

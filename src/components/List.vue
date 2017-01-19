@@ -416,7 +416,6 @@
             //供应商详情列表
             if (_sel.$route.name === "supplierdetaillist") {
                 if (listapi === "Product") {
-                    console.log(this.api + '/Product/List/?token=' + token + '&kind=' + listid + '&Sid=' + localStorage.getItem("sid"))
                     _sel.$http.get(this.api + '/Product/List/?token=' + token + '&kind=' + listid + '&Sid=' + localStorage.getItem("sid")).then((response) => {
                         // 全部商品           
                         if (listid === "0") {

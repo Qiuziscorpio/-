@@ -1,5 +1,5 @@
 <template>
-  <div class="flex-vertical">
+  <div class="flex-vertical verticalheight">
     <!--日期控件-->
     <datetpicker></datetpicker>
     <!--单据列表-->
@@ -143,6 +143,7 @@
     mounted() {
       let _sel = this
       let token = localStorage.getItem("token")
+      console.log('列表页',this.erpapi + '/EnterpriseOrder/MyOrders')
       _sel.$http.post(this.erpapi + '/EnterpriseOrder/MyOrders',
         { "token": token, "kind": "30,31,32,33,34,35,36,37,38,39" }
       ).then((response) => {

@@ -7,6 +7,7 @@ import supplierdetail from '../components/SupplierDetail'
 import personalcenter from '../components/Personalcenter'
 import about from '../components/About'
 import documents from '../components/Documents'
+import documentsdetail from '../components/Documentsdetail'
 import companydata from '../components/shildcomponents/Companydata'
 import store from '../components/store'
 import bind from '../components/Bind'
@@ -77,7 +78,13 @@ export default [
         path:'/documents', 
         component:documents, 
         name:'documents'
-    },      
+    },
+     //外部单据 详情
+    { 
+        path:'/documentsdetail/:id', 
+        component:documentsdetail, 
+        name:'documentsdetail'
+    },          
     //关于
     { 
         path:'/about', 
