@@ -155,7 +155,7 @@
     },
     mounted() {
       let self = this;
-      self.initUserInfo();
+      self.loadData();
     }
   }
 </script>

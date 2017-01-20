@@ -2,8 +2,8 @@
 <div>
   <mt-swipe :auto="4000">   
     <mt-swipe-item v-for="data in lazyimg" v-if="shufflingdata.length=='0'">
-      <img  v-lazy="data.img" @error="setErrorImg"/>
-    </mt-swipe-item>        
+      <img   v-bind:src="data.img"  @error="setErrorImg"/>
+    </mt-swipe-item>      
     <mt-swipe-item v-for="data in shufflingdata" else>
       <img  v-bind:src="data.CoverImg" @error="setErrorImg"/>
     </mt-swipe-item>      
@@ -23,6 +23,7 @@ export default {
     return{
       lazyimg:[
           {"img":"lazyimg"},
+          {"img":"lazyimg"},
           {"img":"lazyimg"}
       ]
     }
@@ -32,7 +33,6 @@ export default {
 
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style  lang="scss" scoped>
+<style  lang="scss" >
 @import "../../assets/scss/shuffing.scss"; 
-
 </style>
