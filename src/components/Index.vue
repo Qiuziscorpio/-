@@ -163,26 +163,4 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
   @import "../assets/scss/search.scss"; 
-  placeholder{
-    color: #fff;
-  }
-  :-ms-input-placeholder {
-    color: #fff;
-  }
-  ::-webkit-input-placeholder {
-     color: #fff;
-  }
-  .index-search{
-    width: 100%;
-    position: absolute;
-    z-index: 9;
-    .search{
-      margin: px2rem(30px);
-      background: rgba(0, 0, 0, 0.4);
-    }
-    .input{
-      border: none;
-      background: rgba(0, 0, 0, 0)
-    }
-  }
 </style>
