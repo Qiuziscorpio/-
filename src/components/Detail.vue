@@ -12,10 +12,6 @@
     <headline :headline="producttit"></headline>
     <!--推荐商品-->
     <GoodsList :datalist="productdata"></GoodsList>
-
-    <router-link :to="{name:'bind'}">
-       跳转到绑定的
-    </router-link>
   </div>
 </template>
 
@@ -99,6 +95,6 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss">
  .detail .mint-swipe{
-    height: 78vw
+    height: 100vw
   }
 </style>
