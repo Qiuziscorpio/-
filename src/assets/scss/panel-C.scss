@@ -12,6 +12,7 @@
               img {
                   width: 100%;
                   max-width: 100%;
+                  background: #f4f4f4;
               }
         }
         .content{
@@ -20,7 +21,7 @@
             .site{
                 margin-top: px2rem(10px);
                 display: flex;
-                 @include fc(28px,#8c8c8c);
+                 @include fc(28px,$grey1);
                  .label{
                      flex: 0 0 14%;
                  }

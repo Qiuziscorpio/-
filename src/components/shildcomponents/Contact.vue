@@ -3,7 +3,7 @@
   <div class="pane-C">
     <div class="panel-C-head">
         <div class="img">
-            <img v-bind:src="contact.CoverImg">
+            <img v-bind:src="contact.CoverImg" @error="setErrorImg">
         </div>
         <div class="content">
            {{contact.Name}}

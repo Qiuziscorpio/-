@@ -1,13 +1,13 @@
 @import "confi.scss";
 
  placeholder{
-    color: #8c8c8c;
+    color: $grey1;
   }
   :-ms-input-placeholder {
-    color: #8c8c8c;
+    color: $grey1;
   }
   ::-webkit-input-placeholder {
-     color: #8c8c8c;
+     color: $grey1;
   }  
   .searchbox{
     position: relative;
@@ -25,7 +25,7 @@
         top:px2rem(10px);
         left:px2rem(15px);     
         i{
-          @include fc(40px,#8c8c8c);
+          @include fc(40px,$grey1);
         }
         &.right{
           left:inherit;
@@ -46,7 +46,7 @@
       flex: 0 0 12%;
       text-align: right;
       i{
-        @include fc(40px,#8c8c8c)
+        @include fc(40px,$grey1)
       }
     }
   }

@@ -33,52 +33,17 @@
             border-top:px2rem(1px) solid #efefef;
         }         
     }
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-top:px2rem(1px) solid #efefef;
-    }
-    &:before{
-        width: 100%;
-        content:"";
-        position: absolute;
-        left:0;
-        bottom:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-bottom:px2rem(1px) solid #efefef;
-    }            
+     @include border-after();
+     @include border-before();
+           
 }
 .documentsdetail{
      padding: px2rem(22px) 0;
     .documentsdetail-content{
         background: #fff;
         position: relative;
-        &:after{
-            width: 100%;
-            content:"";
-            position: absolute;
-            top:0;
-            left:0;
-            -webkit-transform:scaleY(.5);
-            -webkit-transform-origin:0 0;                    
-            border-top:px2rem(1px) solid #efefef;
-        }
-        &:before{
-            width: 100%;
-            content:"";
-            position: absolute;
-            left:0;
-            bottom:0;
-            -webkit-transform:scaleY(.5);
-            -webkit-transform-origin:0 0;                    
-            border-bottom:px2rem(1px) solid #efefef;
-        } 
+        @include border-after();
+        @include border-before();
         font-size: px2rem(30px);
         .head{
             padding: px2rem(22px);
@@ -91,7 +56,7 @@
             }
             .time{
                 @include position(absolute,px2rem(10px),px2rem(22px),9);
-                @include fc(28px,#8c8c8c);
+                @include fc(28px,$grey1);
             }
         }
         .content{
@@ -100,20 +65,11 @@
                 display: flex;
                 padding: px2rem(22px) ;
                 position: relative;
-                &:after{
-                    width: 100%;
-                    content:"";
-                    position: absolute;
-                    top:0;
-                    left:0;
-                    -webkit-transform:scaleY(.5);
-                    -webkit-transform-origin:0 0;                    
-                    border-top:px2rem(1px) solid #efefef;
-                }
+                @include border-after();
                 .sublist{
                     flex: 1;
                     .subtit{
-                        color: #8c8c8c;
+                        color: $grey1;
                         display: inline-block;
                     }
                     .label{
@@ -130,16 +86,8 @@
     margin-top: px2rem(22px);
     overflow: scroll;
     position: relative;
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border:px2rem(1px) solid #efefef;
-    }
+    @include border-after();  
+    @include border-before();  
 }
 
 .documentsdetail-footer{
@@ -147,15 +95,9 @@
     padding: px2rem(22px);
     background: #fff;
     position: relative;
-    
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        top:0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
+    &:after{  
+        @include before-after();    
+        top:0;             
         border:px2rem(1px) solid #efefef;
     }; 
 }
@@ -163,10 +105,10 @@
 table{
     width: 100%;
     background: #fff;
-    @include fc(28px,#8c8c8c);
+    @include fc(28px,$grey1);
 }
 table thead{
-    color: #8c8c8c;
+    color: $grey1;
 }
 table tr td{
     padding: 5px;
@@ -177,5 +119,5 @@ tbody tr:nth-child(odd){
     background:#f4f4f4;
 }
 tbody tr td{
-    color: #565656;
+    color: $theme;
 }

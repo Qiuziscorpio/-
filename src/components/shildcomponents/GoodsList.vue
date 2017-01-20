@@ -3,7 +3,7 @@
       <router-link  tag="a" class="flex-grid flex-grid3" :to="{ path:'/'+data.routername+'/'+data.Id}" v-for="data in datalist" v-if="state.hideshade">
           <div class="panel">           
             <div class="panel-img">
-              <img v-bind:src="data.CoverImg" v-lazy="data.CoverImg">
+              <img v-bind:src="data.CoverImg" @error="setErrorImg">
               <div class="panel-radius">             
                 <div class="panel-radius-icon bg-blue" v-if="data.IsNew===true">
                   <i class="icon iconfont icon-xinpin1"></i>

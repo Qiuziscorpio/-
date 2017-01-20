@@ -1,7 +1,7 @@
 <template>
   <div class="verticalheight">
     <div class="item">
-      <div class="portrait"> <img v-bind:src="user.picture"></div>
+      <div class="portrait"> <img v-bind:src="user.picture" @error="setErrorImg"></div>
       <div class="userinfor">
         <div class="name">
           {{user.name}}

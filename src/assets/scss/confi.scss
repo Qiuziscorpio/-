@@ -18,6 +18,7 @@ a{
 }
 
 $theme:#565656;
+$grey1:#8c8c8c;
 $yellow:#ffb71b;
 $blue:#0ac7fd;
 $green:#74ce3b;
@@ -233,4 +234,14 @@ $rose:#e4195b;
 }
 }
 
+.radius{
+@include position(fixed,px2rem(18px),px2rem(18px),999);
+.radius-icon{
+    line-height:px2rem(96px);
+    @include whradius(50%,px2rem(90px),px2rem(90px));
+    i{
+    @include fc(56px,#fff)
+    }
+}
+}
 

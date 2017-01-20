@@ -13,16 +13,7 @@
         }
     }
     .more{
-        @include fc(28px,#8c8c8c);   
+        @include fc(28px,$grey1);   
     }
-    &:after{
-        width: 100%;
-        content:"";
-        position: absolute;
-        top: 0;
-        left:0;
-        -webkit-transform:scaleY(.5);
-        -webkit-transform-origin:0 0;                    
-        border-top:px2rem(1px) solid #efefef;
-    }
+    @include border-after();
 }

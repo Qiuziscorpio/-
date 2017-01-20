@@ -1,12 +1,12 @@
 @import "confi.scss";
   placeholder{
-    color: #8c8c8c;
+    color: $grey1;
   }
   :-ms-input-placeholder {
-    color: #8c8c8c;
+    color: $grey1;
   }
   ::-webkit-input-placeholder {
-     color: #8c8c8c;
+     color: $grey1;
   }
 
 .form{

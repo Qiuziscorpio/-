@@ -7,6 +7,7 @@ import RouterMap from './router/router'
 import Resource from 'vue-resource'
 import Mintui from 'mint-ui';
 import { Lazyload } from 'mint-ui';
+import loading from './assets/img/loading.png';
 
 Vue.use(Router)
 Vue.use(Resource)
@@ -17,6 +18,11 @@ const router = new Router({
   mode: 'history',
   routes: RouterMap
 })
+
+//图片加载失败
+Vue.prototype.setErrorImg = function(imgObj){
+  return  imgObj.target.src=loading
+}
 
 // 数据接口
 Vue.prototype.api="http://api.91ygj.net/WeChatMall"
@@ -32,6 +38,7 @@ var userpicture="http://img5.imgtn.bdimg.com/it/u=2173640118,1888901789&fm=21&gp
 localStorage.setItem("token",token)
 localStorage.setItem("username",username)
 localStorage.setItem("userpicture",userpicture)
+
 
 /* eslint-disable no-new */
 new Vue({ // eslint-disable-line
