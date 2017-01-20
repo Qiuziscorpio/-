@@ -4,12 +4,12 @@
       <span class="magnify"><i class="icon iconfont icon-sousuo"></i></span>
       <input class="input" :placeholder="placeholder" v-model="searchdata" v-on:keyup="keyup">
       <span class="scan" v-if="placeholder!='搜索供应商'&&placeholder!='请输入关键字'&&$route.params.id!='store'"><i class="icon iconfont icon-saoyisao"></i></span>
-      <div class="scan"  v-if="$route.params.id=='store'" >
-          <span v-on:click="editstore" v-if="state.edit">编辑</span>
-          <span v-on:click="offstore"  v-if="state.off">取消</span>
-          <span v-on:click="cancelstore"  v-if="state.cancel">删除</span>
-      </div>      
-    </div>      
+      <div class="scan" v-if="$route.params.id=='store'">
+        <span v-on:click="editstore" v-if="state.edit">编辑</span>
+        <span v-on:click="offstore" v-if="state.off">取消</span>
+        <span v-on:click="cancelstore" v-if="state.cancel">删除</span>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -29,8 +29,7 @@
         state:{
           edit:true,
           off:false,
-          cancel:false,
-          showshade:true,
+          cancel:false,    showshade:true,
           hideshade:true
         }
       }
@@ -85,7 +84,7 @@
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="scss"  scoped>
-  @import "../../assets/scss/searchbar.scss"; 
+<style lang="scss" scoped>
+@import "../../assets/scss/searchbar.scss"; 
  
 </style>

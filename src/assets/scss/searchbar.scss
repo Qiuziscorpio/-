@@ -22,7 +22,7 @@
      position: relative; 
     .magnify{
         position: absolute;
-        top:px2rem(10px);
+        top:20%;
         left:px2rem(15px);     
         i{
           @include fc(40px,$grey1);
@@ -30,7 +30,7 @@
         &.right{
           left:inherit;
           width: px2rem(50px);
-          right:px2rem(70px);
+          right:px2rem(80px);
         }      
     }
     .input{

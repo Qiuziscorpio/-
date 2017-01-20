@@ -73,7 +73,7 @@
     "webpack-merge": "^0.14.1",
     "mint-ui": "^2.1.0",
     "sass-loader": "^4.0.0",
-    "node-sass":""
+    "node-sass":"^3.13.0"
   },
   "engines": {
     "node": ">= 4.0.0",

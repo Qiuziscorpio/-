@@ -27,7 +27,7 @@
                                         联系人
                                     </span>
                                     <span class="label">{{detaildata.Linkman}}</span>
-                                    <a :href="'tel://'+detaildata.Phone"  class="text-blue">
+                                    <a :href="'tel://'+detaildata.Phone" class="text-blue">
                                         {{detaildata.Phone}}
                                     </a>
                                 </div>
@@ -59,13 +59,13 @@
                                     <td> 单位 </td>
                                     <td> 数量 </td>
                                     <td> 副单位</td>
-                                    <td> 装箱数</td> 
+                                    <td> 装箱数</td>
                                     <td> 箱数</td>
                                     <td> 零数</td>
-                                    <td> 单价</td> 
+                                    <td> 单价</td>
                                     <td> 金额</td>
-                                    <td> 折扣</td> 
-                                    <td> 折扣金额</td>                            
+                                    <td> 折扣</td>
+                                    <td> 折扣金额</td>
                                 </tr>
                             </thead>
                             <tbody>
@@ -84,14 +84,14 @@
                                     <td> {{data.CountPrice}}</td>
                                     <td> {{data.DisCount}} </td>
                                     <td> {{data.DisCountPrice}} </td>
-                                </tr>                                                                        
+                                </tr>
                             </tbody>
                         </table>
                     </div>
                 </div>
             </div>
             <div class="documentsdetail-footer">
-                应收金额    <span class="text-yellow"> ¥ {{detaildata.PutCountPrice}}</span>
+                应收金额 <span class="text-yellow"> ¥ {{detaildata.PutCountPrice}}</span>
             </div>
         </div>
     </div>
@@ -102,7 +102,7 @@
         name: 'Documentsdetail',
         data() {
             return {
-                detaildata:{}
+                detaildata: {}
             }
         },
         methods: {
@@ -113,7 +113,7 @@
             let id = _sel.$route.params.id
             _sel.$http.get(this.erpapi + '/EnterpriseOrder/Orderdetail?id=' + id).then((response) => {
                 //外部单据详情
-                _sel.detaildata=response.data.data
+                _sel.detaildata = response.data.data
             }).then((response) => {
 
             })
@@ -123,5 +123,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-@import "../assets/scss/documentslist.scss"; 
+@import "../assets/scss/documentslist.scss";
+ 
 </style>

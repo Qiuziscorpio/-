@@ -105,9 +105,9 @@
       initUserInfo: function () {
         var self = this;
         self.wechat.initUserInfo(function (res) {
-          if (res.code == 200){
+          if (res.code == 200) {
             self.initWeChat();
-          }else{
+          } else {
             document.location.href = res.data;
           }
         });
@@ -162,5 +162,6 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-  @import "../assets/scss/search.scss"; 
+@import "../assets/scss/search.scss";
+ 
 </style>

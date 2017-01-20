@@ -10,7 +10,7 @@
     .magnify{
         position: absolute;
         left:px2rem(10px);
-        top:px2rem(6px);
+        top:18%;
         i{  
             @include fc(40px,#fff)
          }    
@@ -27,6 +27,7 @@
          }
     }
 }
+
 .index-search{
     width: 100%;
     position: absolute;

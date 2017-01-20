@@ -1,18 +1,18 @@
 <template>
-<div class="verticalheight">
-    <div class="form" >
-        <div class="form-input">
-            <input class="input" type="text" v-model="Account" placeholder="手机号" />
-            <div class="form-verify">
-                <input class="input" type="text" v-model="ValidCode" placeholder="验证码" /> 
-                <div class="label">
-                    获取验证码
+    <div class="verticalheight">
+        <div class="form">
+            <div class="form-input">
+                <input class="input" type="text" v-model="Account" placeholder="手机号" />
+                <div class="form-verify">
+                    <input class="input" type="text" v-model="ValidCode" placeholder="验证码" />
+                    <div class="label">
+                        获取验证码
+                    </div>
                 </div>
-            </div>                      
+            </div>
+            <button class="form-btn" type="button" v-on:click="bindUser">绑定</button>
         </div>
-        <button class="form-btn"  type="button" v-on:click="bindUser">绑定</button>
     </div>
-</div>
 </template>
 
 <script>
@@ -64,4 +64,5 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "../assets/scss/form.scss";
+
 </style>
