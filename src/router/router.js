@@ -11,6 +11,7 @@ import documentsdetail from '../components/Documentsdetail'
 import companydata from '../components/shildcomponents/Companydata'
 import store from '../components/store'
 import bind from '../components/Bind'
+import auto from '../components/Auto'
 
 
 export default [
@@ -95,6 +96,14 @@ export default [
     {
         path:'/user/bind', 
         component:bind, 
-        name:'bind'
-    }                      
+        name:'bind',
+        meta: { requiresAuth: true }
+    },
+    //自动登录 
+    {
+        path:'/user/auto', 
+        component:auto, 
+        name:'auto',
+        meta: { requiresAuth: true }
+    }                           
 ]

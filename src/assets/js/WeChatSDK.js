@@ -2,35 +2,64 @@
 let vuesrc = require('vue-resource');
 
 class WeChatSDK {
-    constructor(msg) {
+    constructor() {
+        let msg ={ Role:[] }
         this.Role = msg.Role;
         this.Title = msg.Title || '';
         this.Link = msg.Link || '';
         this.ImgUrl = msg.ImgUrl || '';
         this.Desc = msg.Desc || '';
+        this.ApiUrl = 'http://api.91ygj.net';
         this.wxConfig = {};
     }
     //绑定注册新用户
+    //let data = { kind: 'mall', acc: self.Account, pwd: self.ValidCode, oid: self.Openid };
     bindNewUser(data, callback) {
-        let url = 'http://192.168.1.14:51241/WeChat/Bindwx';
+        let url = `${this.ApiUrl}/WeChat/Bindwx`;
         vue.http.post(url, JSON.stringify(data)).then((rsp) => {
             if (rsp && rsp.body) {
                 if (rsp.body.code == 200) {
                     var res = rsp.body;
-                    localStorage.setItem("UserOpenId", res.Openid);
-                    localStorage.setItem("username", res.UserName);
-                    localStorage.setItem("userpicture", res.Avatar);
-                    localStorage.setItem("token", res.Token);
+                    localStorage.setItem("username", res.data.UserName);
+                    localStorage.setItem("userpicture", res.data.UserPhoto);
+                    localStorage.setItem("token", res.data.Token);
                 }
                 callback(rsp.body);
             }
             //console.log(JSON.stringify(rsp));
         });
     }
+    //用户自动登录
+    //let data = { kind:'mall', token: '' };
+    autoUserLogin(data, callback) {
+        let url = `${this.ApiUrl}/WeChat/AutoSignin`;
+        vue.http.post(url, JSON.stringify(data)).then((rsp) => {
+            if (rsp && rsp.body) {
+                if (rsp.body.code == 200) {
+                    var res = rsp.body;
+                    console.log(JSON.stringify(res.data));
+                    localStorage.setItem("username", res.data.UserName);
+                    localStorage.setItem("userpicture", res.data.UserPhoto);
+                    localStorage.setItem("token", res.data.Token);
+                }
+                callback(rsp.body);
+            }
+            //console.log(JSON.stringify(rsp));
+        });
+    }
+    //发送验证码
+    //let data = { kind: 'mall', acc: self.Account };
+    sendVildaCode(data, callback) {
+        let url = `${this.ApiUrl}/wechat/sendCode`;
+        vue.http.post(url, JSON.stringify(data)).then((rsp) => {
+            callback(rsp.body);
+            //console.log(JSON.stringify(rsp));
+        });
+    }
     //获取用户的基本信息
     initUserInfo(callback) {
         let self = this;
-        let url = `http://192.168.1.14:51241/user/WeUserAccount`;
+        let url = `${this.ApiUrl}/user/WeUserAccount`;
         let data = { kind: "mall", openid: localStorage.getItem('UserOpenId'), rurl: location.href };
         //console.log(JSON.stringify(data));
         vue.http.post(url, JSON.stringify(data)).then((rsp) => {
@@ -41,7 +70,7 @@ class WeChatSDK {
     //从API获取微信的签名和票据
     initWeChatConfig(callback) {
         let self = this;
-        let url = `http://api.91ygj.net/wx/appconfig?url=${location.href.split('#')[0]}&stamp=${parseInt(new Date().getTime() / 1000)}`;
+        let url = `${self.ApiUrl}/wx/appconfig?url=${location.href.split('#')[0]}&stamp=${parseInt(new Date().getTime() / 1000)}`;
         //从API获取微信配置的的签名和票据
         vue.http.get(url).then((rsp) => {
             if (rsp && rsp.data.code == 200) {
@@ -73,6 +102,28 @@ class WeChatSDK {
     hideMenuItem() {
         wx.hideMenuItems({
             menuList: [
+                "menuItem:share:qq",
+                "menuItem:share:weiboApp",
+                "menuItem:favorite",
+                "menuItem:share:facebook",
+                "menuItem:share:QZone",
+                "menuItem:editTag",
+                "menuItem:delete",
+                "menuItem:copyUrl",
+                "menuItem:originPage",
+                "menuItem:readMode",
+                "menuItem:openWithQQBrowser",
+                "menuItem:openWithSafari",
+                "menuItem:share:email",
+                "menuItem:share:brand"
+            ] // 要隐藏的菜单项，只能隐藏“传播类”和“保护类”按钮，所有menu项见附录3
+        });
+    }
+    hideAllMenuItem() {
+        wx.hideMenuItems({
+            menuList: [
+                "menuItem:share:appMessage",
+                "menuItem:share:timeline",
                 "menuItem:share:qq",
                 "menuItem:share:weiboApp",
                 "menuItem:favorite",
@@ -129,8 +180,8 @@ class WeChatSDK {
             scanType: ["barCode"], // 可以指定扫二维码还是一维码，默认二者都有
             success: function (res) {
                 var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
-                // var arr_result = result.split(',');
-                // callback(arr_result[1]);
+                var arr_result = result.split(',');
+                callback(arr_result[1]);
             }
         });
     }

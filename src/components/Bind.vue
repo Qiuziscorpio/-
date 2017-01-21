@@ -5,7 +5,7 @@
                 <input class="input" type="text" v-model="Account" placeholder="手机号" />
                 <div class="form-verify">
                     <input class="input" type="text" v-model="ValidCode" placeholder="验证码" />
-                    <div class="label">
+                    <div class="label" v-on:click="sendValidCode">
                         获取验证码
                     </div>
                 </div>
@@ -27,6 +27,7 @@
                 RedirectTo: '',
                 Account: '',
                 ValidCode: '',
+                wechat: new WeChatSDK({ Role: [] })
             }
         },
         methods: {
@@ -39,16 +40,31 @@
                 }
                 return null;
             },
+            //发送验证码
+            sendValidCode: function () {
+                let self = this;
+                let data = { kind: 'mall', acc: self.Account };
+                self.wechat.sendVildaCode(data, function (res) {
+
+                });
+            },
             //发起绑定用户的方法
             bindUser: function () {
                 let self = this;
-                let data = { kind: 'mall', acc: self.Account, pwd: self.ValidCode, oid: self.Openid, re: self.RedirectTo };
-                let wechat = new WeChatSDK({ Role: [] });
-                wechat.bindNewUser(data, function (res) {
-                    if (data.code == 200) {
+
+                if (!self.Account || !self.ValidCode) {
+                    alert("请填写手机号码和验证码!");
+                    return;
+                }
+
+                let data = { kind: 'mall', acc: self.Account, pwd: self.ValidCode, oid: self.Openid };
+                self.wechat.bindNewUser(data, function (res) {
+                    if (res.code == 200) {
+                        localStorage.setItem("UserOpenId", self.Openid);
                         document.location.href = self.RedirectTo;     //成功绑定用户的信息，跳转回用户所请求的页面地址
                     } else {
-
+                        alert(res.msg);
+                        console.log(JSON.stringify(res));
                     }
                 })
             }
@@ -64,5 +80,4 @@
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
 @import "../assets/scss/form.scss";
-
 </style>
